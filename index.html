@@ -1,0 +1,18 @@
+---
+layout: default
+---
+<section class="hero">
+  <div><span class="prompt">$</span> whoami</div>
+  <h1>Antonio Montero Dorado</h1>
+  <p>Head of Quality Assurance. Equipos distribuidos, automatización y AI aplicada a testing a escala de retail. Sin humo, con datos.</p>
+</section>
+
+<h2 id="archive">Casos ejecutados</h2>
+<ul class="tc-list">
+  {% for post in site.posts %}
+  <li>
+    <span class="tc-id">TC-{{ post.date | date: "%Y%m%d" }}</span>
+    <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+  </li>
+  {% endfor %}
+</ul>

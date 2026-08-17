@@ -1,0 +1,22 @@
+title: "AMD // QA Reports"
+description: "Notas de un Head of QA sobre testing, automatización y AI en retail a escala."
+author: "Antonio Montero Dorado"
+baseurl: ""
+url: "https://tu-usuario.github.io"
+
+markdown: kramdown
+permalink: /:year/:month/:day/:title/
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+
+exclude:
+  - README.md

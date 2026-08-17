@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}</title>
+  <meta name="description" content="{{ site.description }}">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  <link rel="icon" href="data:,">
+</head>
+<body>
+  <header class="topbar">
+    <div class="term-dots"><span></span><span></span><span></span></div>
+    <a class="brand" href="{{ '/' | relative_url }}">amd@qa-reports<span class="cursor">_</span></a>
+    <nav>
+      <a href="{{ '/' | relative_url }}">home</a>
+      <a href="{{ '/#archive' | relative_url }}">casos</a>
+      <a href="https://www.linkedin.com/" target="_blank" rel="noopener">linkedin</a>
+    </nav>
+  </header>
+
+  <main>
+    {{ content }}
+  </main>
+
+  <footer>
+    <p>&copy; {{ 'now' | date: "%Y" }} {{ site.author }} — build status: <span class="badge pass">PASSED</span></p>
+  </footer>
+</body>
+</html>
