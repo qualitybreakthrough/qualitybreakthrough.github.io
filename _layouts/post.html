@@ -1,14 +1,58 @@
 ---
 layout: default
 ---
-<article class="test-case">
-  <div class="tc-header">
-    <span class="tc-id">TC-{{ page.date | date: "%Y%m%d" }}</span>
-    <span class="badge {{ page.status | default: "pass" }}">{{ page.status | default: "PASSED" | upcase }}</span>
-  </div>
-  <h1>{{ page.title }}</h1>
-  <p class="tc-meta">ejecutado el {{ page.date | date: "%d/%m/%Y" }} · tags: {{ page.tags | join: ", " }}</p>
-  <div class="tc-body">
+
+<article class="post-wrapper">
+
+  <header class="post-header fade-up">
+    {% if page.categories.first %}
+      <a href="{{ '/categorias/' | append: page.categories.first | relative_url }}" class="post-category-tag">
+        {{ page.categories.first | replace: '-', ' ' | upcase }}
+      </a>
+    {% endif %}
+
+    <h1 class="post-title">{{ page.title }}</h1>
+
+    <div class="post-meta">
+      <span>{{ page.date | date: "%-d %b %Y" }}</span>
+      {% if page.read_time %}
+        <span>⏱ {{ page.read_time }} min de lectura</span>
+      {% endif %}
+      {% if page.author %}
+        <span>por {{ page.author }}</span>
+      {% endif %}
+    </div>
+  </header>
+
+  <div class="post-content fade-up">
     {{ content }}
   </div>
+
+  <!-- Footer del post: autor -->
+  <footer class="post-footer fade-up">
+    <div class="hero-avatar" style="width:56px;height:56px;font-size:1.3rem;">
+      {{ site.author.initials }}
+    </div>
+    <div>
+      <strong style="display:block;font-family:var(--serif);font-size:1rem;">
+        {{ site.author.name }}
+      </strong>
+      <span style="font-size:.82rem;color:var(--muted);">{{ site.author.role }}</span>
+    </div>
+  </footer>
+
+  <!-- Artículos relacionados -->
+  {% assign cat = page.categories.first %}
+  {% assign related = site.posts | where_exp: "p", "p.url != page.url" | where_exp: "p", "p.categories contains cat" | limit: 3 %}
+  {% if related.size > 0 %}
+  <section style="margin-top:64px;">
+    <div class="section-label" style="margin-bottom:24px;">✦ También te puede interesar</div>
+    <div class="articles-grid" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr));">
+      {% for post in related %}
+        {% include article-card.html post=post %}
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
 </article>
