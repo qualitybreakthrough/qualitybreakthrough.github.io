@@ -9,7 +9,6 @@ categories:
 icon: cpu
 read_time: 4
 excerpt: Usar Inteligencia Artificial en una factoría de software únicamente para escribir scripts más rápido es un desperdicio operativo. La verdadera aceleración ocurre cuando la IA resuelve el cuello de botella del mantenimiento y los datos.
-
 ---
 
 Si utilizas Inteligencia Artificial en tu factoría de software solo para generar casos de prueba a mayor velocidad, estás perdiendo el 80% de su impacto real.
@@ -32,7 +31,7 @@ La IA no debe considerarse un sustituto de los analistas de calidad, sino el mot
 
 #SoftwareTesting #QualityAssurance #AITesting #SoftwareFactory #DevOps #TestAutomation
 
-***
+**English version**
 
 Using Artificial Intelligence in your software factory merely to write test cases faster means missing out on 80% of its real value.
 
