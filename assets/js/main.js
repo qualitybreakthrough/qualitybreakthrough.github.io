@@ -39,3 +39,43 @@ if (document.querySelector('.post-content')) {
     progressBar.style.width = pct + '%';
   });
 }
+
+// ─── AÑADIR AL FINAL DE assets/js/main.js ───
+
+// Carrusel hero
+(function () {
+  const cards = document.querySelectorAll('.featured-card');
+  const dots  = document.querySelectorAll('[data-dot]');
+  if (!cards.length) return;
+
+  let current  = 0;
+  let autoplay = null;
+
+  function goToSlide(index) {
+    cards[current].classList.remove('active');
+    dots[current].classList.remove('active');
+    current = index;
+    cards[current].classList.add('active');
+    dots[current].classList.add('active');
+  }
+
+  // Exponer para el onclick del HTML
+  window.goToSlide = goToSlide;
+
+  // Autoplay cada 5 segundos
+  function startAutoplay() {
+    autoplay = setInterval(() => {
+      goToSlide((current + 1) % cards.length);
+    }, 5000);
+  }
+
+  // Pausa el autoplay si el usuario interactúa
+  dots.forEach(dot => {
+    dot.addEventListener('click', () => {
+      clearInterval(autoplay);
+      startAutoplay(); // reinicia el timer tras clic
+    });
+  });
+
+  startAutoplay();
+})();
