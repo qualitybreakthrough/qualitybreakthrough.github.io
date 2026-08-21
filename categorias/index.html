@@ -1,0 +1,25 @@
+---
+layout: default
+title: Categorías
+permalink: /categorias/
+---
+
+<section class="site-section">
+  <div class="section-header">
+    <div>
+      <div class="section-label">✦ Explorar por tema</div>
+      <h2 class="section-title">Categorías</h2>
+    </div>
+  </div>
+
+  <div class="cats-grid">
+    {% for cat in site.categories_list %}
+      {% assign count = site.posts | where_exp: "p", "p.categories contains cat.slug" | size %}
+      <a href="{{ '/categorias/' | append: cat.slug | append: '/' | relative_url }}" class="cat-card">
+        <span class="cat-icon">{{ cat.icon }}</span>
+        <div class="cat-name">{{ cat.label }}</div>
+        <div class="cat-count">{{ count }} artículo{% if count != 1 %}s{% endif %}</div>
+      </a>
+    {% endfor %}
+  </div>
+</section>
