@@ -1,0 +1,307 @@
+---
+layout: default
+title: Sobre mí
+permalink: /sobre-mi/
+---
+
+<!-- ═══ HERO SOBRE MÍ ════════════════════════ -->
+<section style="background:var(--ink);color:white;padding:80px 5%;">
+  <div style="max-width:900px;margin:0 auto;display:grid;grid-template-columns:auto 1fr;gap:56px;align-items:center;">
+
+    <div style="display:flex;flex-direction:column;align-items:center;gap:16px;flex-shrink:0;">
+      <div style="width:140px;height:140px;border-radius:50%;
+                  background:linear-gradient(135deg,var(--accent),var(--gold));
+                  display:flex;align-items:center;justify-content:center;
+                  font-family:var(--serif);font-size:3.5rem;color:white;">
+        {{ site.author.initials }}
+      </div>
+      <div style="display:flex;flex-direction:column;gap:8px;width:100%;">
+        <a href="{{ site.author.linkedin }}" target="_blank" rel="noopener" class="social-link"
+           style="border-color:rgba(255,255,255,.15);color:rgba(255,255,255,.6);">
+          💼 LinkedIn
+        </a>
+        <a href="mailto:{{ site.author.email }}" class="social-link"
+           style="border-color:rgba(255,255,255,.15);color:rgba(255,255,255,.6);">
+          ✉️ {{ site.author.email }}
+        </a>
+        <a href="{{ '/feed.xml' | relative_url }}" class="social-link"
+           style="border-color:rgba(255,255,255,.15);color:rgba(255,255,255,.6);">
+          📡 Feed RSS
+        </a>
+      </div>
+    </div>
+
+    <div class="fade-up" style="display:flex;flex-direction:column;gap:20px;">
+      <div class="section-label" style="color:var(--gold);">✦ Head of Quality Assurance</div>
+      <h1 style="font-family:var(--serif);font-size:clamp(2rem,4vw,3rem);line-height:1.1;">
+        {{ site.author.name }}
+      </h1>
+      <p style="font-size:1.05rem;color:rgba(255,255,255,.7);line-height:1.75;max-width:520px;">
+        {{ site.author.bio }}
+      </p>
+      <div style="display:flex;gap:16px;flex-wrap:wrap;padding-top:8px;">
+        <a href="{{ '/articulos/' | relative_url }}" class="btn-primary">Leer mis artículos →</a>
+        <a href="{{ '/newsletter/' | relative_url }}"
+           style="color:white;padding:14px 28px;border:1.5px solid rgba(255,255,255,.3);
+                  border-radius:30px;font-size:.875rem;text-decoration:none;transition:border-color .2s;"
+           onmouseover="this.style.borderColor='white'"
+           onmouseout="this.style.borderColor='rgba(255,255,255,.3)'">
+          Newsletter
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══ STATS ═════════════════════════════════ -->
+<div class="stats-strip">
+  <div class="stat-item">
+    <span class="stat-num">{{ site.stats.experience_value }}</span>
+    <span class="stat-label">Años en QA</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-num">{{ site.posts | size }}</span>
+    <span class="stat-label">Artículos</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-num">60K+</span>
+    <span class="stat-label">Casos migrados</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-num">2</span>
+    <span class="stat-label">Países · Equipos</span>
+  </div>
+</div>
+
+<!-- ═══ TRAYECTORIA ═══════════════════════════ -->
+<section class="site-section" style="max-width:900px;margin:0 auto;">
+
+  <div class="section-header">
+    <div>
+      <div class="section-label">✦ De dónde vengo</div>
+      <h2 class="section-title">Trayectoria</h2>
+    </div>
+  </div>
+
+  <div style="display:flex;flex-direction:column;gap:0;">
+
+    {% assign timeline = site.data.timeline %}
+
+    <!-- Item 1 -->
+    <div class="timeline-item fade-up">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <div class="timeline-meta">2022 → Actualidad</div>
+        <h3 class="timeline-title">Head of Quality Assurance</h3>
+        <div class="timeline-company">Carrefour Spain · Madrid</div>
+        <p class="timeline-desc">
+          Liderazgo de equipos QA distribuidos (Madrid e India), gestión de proveedores externos (Capgemini y Sogeti),
+          migración de TestLink a XRay Enterprise Cloud con más de 60.000 casos de prueba, y desarrollo de marcos
+          de gobernanza QA: presupuesto, entornos no productivos y Test Data Management.
+        </p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px;">
+          <span class="skill-tag">XRay · TestLink</span>
+          <span class="skill-tag">Selenium · Pytest</span>
+          <span class="skill-tag">Jenkins · GitHub Actions</span>
+          <span class="skill-tag">Gestión de proveedores</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Item 2 — personaliza con tu experiencia real anterior -->
+    <div class="timeline-item fade-up">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <div class="timeline-meta">Etapa anterior</div>
+        <h3 class="timeline-title">QA Manager / Test Lead</h3>
+        <div class="timeline-company">Empresa anterior · Ciudad</div>
+        <p class="timeline-desc">
+          Descripción de tu etapa anterior. Puedes editar esto directamente en
+          <code>sobre-mi/index.html</code> o crear un fichero <code>_data/timeline.yml</code>
+          para gestionarlo desde datos.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══ SOBRE ESTE BLOG ═══════════════════════ -->
+<section class="site-section cats-section">
+  <div style="max-width:900px;margin:0 auto;">
+
+    <div class="section-header">
+      <div>
+        <div class="section-label">✦ Por qué escribo</div>
+        <h2 class="section-title">Sobre este blog</h2>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;">
+
+      <div class="about-reason-card fade-up">
+        <span style="font-size:2rem;margin-bottom:12px;display:block;">🧠</span>
+        <h3 style="font-family:var(--serif);font-size:1.15rem;margin-bottom:10px;">Consolidar lo aprendido</h3>
+        <p style="font-size:.875rem;color:var(--muted);line-height:1.7;">
+          Escribir me obliga a estructurar ideas que de otra forma se quedan en notas dispersas.
+          Este blog es mi segunda memoria.
+        </p>
+      </div>
+
+      <div class="about-reason-card fade-up">
+        <span style="font-size:2rem;margin-bottom:12px;display:block;">🤝</span>
+        <h3 style="font-family:var(--serif);font-size:1.15rem;margin-bottom:10px;">Devolver a la comunidad</h3>
+        <p style="font-size:.875rem;color:var(--muted);line-height:1.7;">
+          Aprendí mucho leyendo a otros profesionales. Compartir mis errores y soluciones
+          es la forma más directa de contribuir.
+        </p>
+      </div>
+
+      <div class="about-reason-card fade-up">
+        <span style="font-size:2rem;margin-bottom:12px;display:block;">🎯</span>
+        <h3 style="font-family:var(--serif);font-size:1.15rem;margin-bottom:10px;">Sin filtro corporativo</h3>
+        <p style="font-size:.875rem;color:var(--muted);line-height:1.7;">
+          Las reflexiones que no puedo escribir en un informe interno las escribo aquí.
+          Con nombres cambiados, pero con situaciones reales.
+        </p>
+      </div>
+
+      <div class="about-reason-card fade-up">
+        <span style="font-size:2rem;margin-bottom:12px;display:block;">📡</span>
+        <h3 style="font-family:var(--serif);font-size:1.15rem;margin-bottom:10px;">Conectar con profesionales</h3>
+        <p style="font-size:.875rem;color:var(--muted);line-height:1.7;">
+          Algunos de los mejores proyectos y conversaciones que he tenido empezaron
+          con alguien leyendo un post mío en LinkedIn.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TEMAS QUE TRATO ═══════════════════════ -->
+<section class="site-section" style="max-width:900px;margin:0 auto;padding-top:0;">
+  <div class="section-header">
+    <div>
+      <div class="section-label">✦ De qué hablo</div>
+      <h2 class="section-title">Temas principales</h2>
+    </div>
+    <a href="{{ '/categorias/' | relative_url }}" class="see-all">Ver categorías →</a>
+  </div>
+  <div class="cats-grid">
+    {% for cat in site.categories_list %}
+      {% assign count = site.posts | where_exp: "p", "p.categories contains cat.slug" | size %}
+      <a href="{{ '/categorias/' | append: cat.slug | append: '/' | relative_url }}" class="cat-card">
+        <span class="cat-icon">{{ cat.icon }}</span>
+        <div class="cat-name">{{ cat.label }}</div>
+        <div class="cat-count">{{ count }} artículo{% if count != 1 %}s{% endif %}</div>
+      </a>
+    {% endfor %}
+  </div>
+</section>
+
+<!-- ═══ CTA NEWSLETTER ════════════════════════ -->
+<section class="newsletter-section">
+  <div class="nl-inner">
+    <div class="section-label" style="color:var(--gold);">✦ Sígueme</div>
+    <h2 class="nl-title">¿Te resulta útil<br>lo que escribo?</h2>
+    <p class="nl-sub">
+      Suscríbete para recibir cada nueva reflexión directamente en tu bandeja.
+      Sin spam. Sin algoritmos intermediarios.
+    </p>
+    <form class="nl-form" action="#" method="post">
+      <input type="email" name="email" class="nl-input" placeholder="tu@email.com" required>
+      <button type="submit" class="nl-btn">Suscribirse</button>
+    </form>
+    <div class="nl-note">Sin spam · Baja cuando quieras</div>
+  </div>
+</section>
+
+<style>
+/* Timeline */
+.timeline-item {
+  display: grid;
+  grid-template-columns: 20px 1fr;
+  gap: 0 28px;
+  padding-bottom: 48px;
+  position: relative;
+}
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: 9px;
+  top: 20px;
+  bottom: 0;
+  width: 2px;
+  background: var(--surface);
+}
+.timeline-item:last-child::before { display: none; }
+
+.timeline-dot {
+  width: 20px; height: 20px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex-shrink: 0;
+  margin-top: 2px;
+  position: relative;
+  z-index: 1;
+}
+.timeline-content { padding-bottom: 8px; }
+.timeline-meta {
+  font-family: var(--mono);
+  font-size: .72rem;
+  color: var(--accent);
+  letter-spacing: .08em;
+  margin-bottom: 6px;
+}
+.timeline-title {
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  margin-bottom: 4px;
+}
+.timeline-company {
+  font-size: .82rem;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+.timeline-desc {
+  font-size: .875rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+.skill-tag {
+  background: var(--surface);
+  color: var(--ink);
+  font-family: var(--mono);
+  font-size: .68rem;
+  padding: 4px 10px;
+  border-radius: 20px;
+  display: inline-block;
+}
+
+/* About reason cards */
+.about-reason-card {
+  background: var(--white);
+  border-radius: 14px;
+  padding: 28px 24px;
+  box-shadow: var(--shadow);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  section > div[style*="grid-template-columns: auto 1fr"] {
+    grid-template-columns: 1fr !important;
+    text-align: center;
+  }
+  .about-reason-card-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .timeline-item { grid-template-columns: 16px 1fr; gap: 0 20px; }
+}
+@media (max-width: 600px) {
+  div[style*="grid-template-columns:1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+}
+</style>
