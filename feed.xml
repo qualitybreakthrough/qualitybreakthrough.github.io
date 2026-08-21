@@ -1,52 +1,66 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="https://tuusuario.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://tuusuario.github.io/" rel="alternate" type="text/html" /><updated>2026-08-21T19:24:35+00:00</updated><id>https://tuusuario.github.io/feed.xml</id><title type="html">QA Insights</title><subtitle>Reflexiones reales sobre calidad de software, liderazgo de equipos e IA aplicada al testing.</subtitle><author><name>Antonio</name><email>tu@email.com</email></author><entry><title type="html">Estrategia de automatización ante dependencias de terceros: El cambio de pasarela de pago</title><link href="https://tuusuario.github.io/quality%20assurance/test%20automation/software%20architecture/2026/08/21/qa-automation-strategy/" rel="alternate" type="text/html" title="Estrategia de automatización ante dependencias de terceros: El cambio de pasarela de pago" /><published>2026-08-21T00:00:00+00:00</published><updated>2026-08-21T00:00:00+00:00</updated><id>https://tuusuario.github.io/quality%20assurance/test%20automation/software%20architecture/2026/08/21/qa-automation-strategy</id><content type="html" xml:base="https://tuusuario.github.io/quality%20assurance/test%20automation/software%20architecture/2026/08/21/qa-automation-strategy/"><![CDATA[<p>Automatizar el flujo de checkout cuando cambias de pasarela de pago no es un reto de código en el framework de pruebas. Es un reto de arquitectura y gestión de dependencias.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="https://tuusuario.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://tuusuario.github.io/" rel="alternate" type="text/html" /><updated>2026-08-21T19:35:09+00:00</updated><id>https://tuusuario.github.io/feed.xml</id><title type="html">QA Insights</title><subtitle>Reflexiones reales sobre calidad de software, liderazgo de equipos e IA aplicada al testing.</subtitle><author><name>Antonio</name><email>tu@email.com</email></author><entry><title type="html">Trabajo previo para diseñar la estrategia de automatización de una funcionalidad core con dependencias de terceros</title><link href="https://tuusuario.github.io/qa-strategy/2026/08/21/qa-automation-strategy/" rel="alternate" type="text/html" title="Trabajo previo para diseñar la estrategia de automatización de una funcionalidad core con dependencias de terceros" /><published>2026-08-21T00:00:00+00:00</published><updated>2026-08-21T00:00:00+00:00</updated><id>https://tuusuario.github.io/qa-strategy/2026/08/21/qa-automation-strategy</id><content type="html" xml:base="https://tuusuario.github.io/qa-strategy/2026/08/21/qa-automation-strategy/"><![CDATA[<p>Automatizar el flujo de checkout al cambiar la pasarela de pago de un ecommerce no es un reto de código. Es un problema de arquitectura, contratos y aislamiento.</p>
 
-<p>Si intentas automatizar directamente contra los entornos de integración del proveedor externo, tu suite fallará constantemente por timeouts, datos de prueba bloqueados o caídas de su sandbox.</p>
+<p>Lanzar tests automatizados directo contra la sandbox del proveedor externo solo genera latencia, timeouts, datos bloqueados y pipelines en rojo que todo el equipo termina ignorando.</p>
 
-<p>Antes de tirar una sola línea de código en tu framework de automatización, hay cuatro pasos previos indispensables para estructurar la estrategia:</p>
+<p>Antes de tirar una sola línea de código en el framework, la estrategia exige cuatro pasos previos indispensables:</p>
 
-<p>Mapeo de contratos de integración (Contract Testing)
-Validar los esquemas de petición y respuesta entre el ecommerce y el nuevo proveedor con herramientas tipo Pact. Garantizar que la estructura JSON y las cabeceras se respetan en ambas partes ahorra decenas de horas de depuración en la capa de UI.</p>
+<ol>
+  <li>
+    <p>Pruebas de contrato (Contract Testing)
+Validar esquemas de petición y respuesta entre nuestro ecommerce y el nuevo proveedor con herramientas tipo Pact. Garantizar que la estructura JSON, tipos de datos y cabeceras se respeten en ambas partes ahorra decenas de horas de depuración en la capa de UI.</p>
+  </li>
+  <li>
+    <p>Aislamiento con Mocks y Stubs para CI/CD
+La suite de regresión que corre en el pipeline debe ser rápida y determinista. Implementar servidores de mock (como WireMock o Mountebank) permite simular cobros exitosos, denegados o respuestas lentas sin tocar la red externa.</p>
+  </li>
+  <li>
+    <p>Definición del alcance E2E real
+Reservar los ejecuciones contra el sandbox real del tercero exclusivamente para una suite reducida de smoke tests o ejecuciones nocturnas. En este punto, la creación y limpieza de datos de prueba (tarjetas, credenciales de comercio) debe estar 100% orquestada.</p>
+  </li>
+  <li>
+    <p>Observabilidad y verificación asíncrona
+Diseñar cómo la automatización validará los eventos de fondo, especialmente los webhooks de confirmación. Si la suite solo evalúa la pantalla final del navegador, los fallos de procesamiento backend pasarán desapercibidos.</p>
+  </li>
+</ol>
 
-<p>Estrategia de Stubs y Mocks para entornos de CI/CD
-Los tests automatizados de regresión que corren en el pipeline no deben depender del entorno del tercero. Implementar servidores de mock (como WireMock o Mountebank) para simular respuestas exitosas, denegadas o lentas de la pasarela garantiza ejecuciones deterministas y rápidas.</p>
+<p>La automatización que no aisla sus dependencias externas no aporta calidad, solo crea ruido.</p>
 
-<p>Aislamiento de la prueba E2E final
-Reservar la automatización contra el sandbox real del proveedor únicamente para un conjunto reducido de pruebas de humo o un pipeline nocturno. En este nivel, la gestión de datos de prueba (tarjetas de test, cuentas de comercio) debe estar completamente orquestada y automatizada.</p>
+<p>¿Cómo gestionáis en vuestros equipos el testing de flujos críticos dependientes de plataformas de terceros?</p>
 
-<p>Estrategia de observabilidad y métricas
-Definir cómo va a verificar la automatización los eventos asíncronos, como los webhooks de confirmación de pago. Si la automatización solo mira el frontend, se perderán fallos críticos de procesamiento en el backend.</p>
-
-<p>Automatizar sin aislar las dependencias externas no genera valor; solo crea una suite inestable que el equipo terminará ignorando.</p>
-
-<p>¿Cómo gestionáis en vuestros equipos la automatización cuando dependéis de plataformas de terceros en flujos críticos?</p>
-
-<p>#QualityAssurance #SoftwareTesting #TestAutomation #ECommerce #SoftwareArchitecture #CI_CD</p>
+<p>#QualityAssurance #SoftwareTesting #TestAutomation #ECommerce #QAStrategy #SoftwareArchitecture</p>
 
 <p><strong>English version</strong></p>
 
-<p>Automating the checkout flow during a payment gateway migration is not a test framework coding challenge. It is an architecture and dependency management challenge.</p>
+<p>Automating the checkout flow during a payment gateway migration is not a test coding challenge. It is an architecture, contract, and isolation problem.</p>
 
-<p>If you attempt to automate directly against the third-party provider’s integration environment, your suite will constantly fail due to timeouts, locked test data, or sandbox downtime.</p>
+<p>Running automated tests directly against a third-party sandbox only results in network latency, timeouts, locked test data, and broken pipelines that the team will eventually ignore.</p>
 
-<p>Before writing a single line of code in your automation framework, there are four essential preliminary steps to design the strategy:</p>
+<p>Before writing a single line of code in the framework, four essential steps must be established:</p>
 
-<p>Integration Contract Mapping (Contract Testing)
-Validate request and response schemas between the ecommerce platform and the new provider using tools like Pact. Ensuring JSON structures and headers are respected on both sides saves dozens of debugging hours at the UI layer.</p>
+<ol>
+  <li>
+    <p>Contract Testing
+Validate request and response schemas between the ecommerce system and the new provider using tools like Pact. Ensuring JSON structure, data types, and headers match specifications saves dozens of UI-level debugging hours.</p>
+  </li>
+  <li>
+    <p>Mocking and Stubbing for CI/CD
+The regression suite running in CI/CD must be fast and deterministic. Implementing mock servers (such as WireMock or Mountebank) allows simulating successful, declined, or delayed transactions without relying on the external network.</p>
+  </li>
+  <li>
+    <p>Focused End-to-End Scope
+Reserve execution against the provider’s actual sandbox for a lean smoke test suite or nightly runs. At this level, test data management (test credit cards, merchant accounts) must be fully automated and orchestrated.</p>
+  </li>
+  <li>
+    <p>Observability and Asynchronous Event Verification
+Define how automation will assert background events, particularly confirmation webhooks. If the suite only checks the browser UI, critical backend processing failures will be missed.</p>
+  </li>
+</ol>
 
-<p>Stubbing and Mocking Strategy for CI/CD Pipelines
-Automated regression tests running in the pipeline should never depend on the third-party environment. Implementing mock servers (such as WireMock or Mountebank) to simulate successful, declined, or delayed payment responses guarantees fast and deterministic test runs.</p>
+<p>Automation that fails to isolate external dependencies does not provide quality, it only generates noise.</p>
 
-<p>Isolation of End-to-End Tests
-Reserve automation against the provider’s actual sandbox exclusively for a small set of smoke tests or nightly pipeline runs. At this level, test data management (test credit cards, merchant accounts) must be fully automated and orchestrated.</p>
+<p>How does your team handle automated testing for critical flows dependent on third-party services?</p>
 
-<p>Observability and Event Strategy
-Define how the automation will verify asynchronous events, such as payment confirmation webhooks. If automation only checks the frontend UI, critical backend processing failures will be missed.</p>
-
-<p>Automating without isolating external dependencies brings no value; it only builds a flaky suite that the team will eventually ignore.</p>
-
-<p>How does your team handle test automation when critical flows rely on third-party platforms?</p>
-
-<p>#QualityAssurance #SoftwareTesting #TestAutomation #ECommerce #SoftwareArchitecture #CI_CD</p>]]></content><author><name>Antonio</name><email>tu@email.com</email></author><category term="Quality Assurance" /><category term="Test Automation" /><category term="Software Architecture" /><summary type="html"><![CDATA[Automatizar una funcionalidad crítica llena de dependencias de terceros no es escribir código rápido, es diseñar una estrategia de aislamiento, contratos y entornos.]]></summary></entry><entry><title type="html">La trampa de medir QA solo por la velocidad de ejecucion</title><link href="https://tuusuario.github.io/quality%20assurance/testing/liderazgo%20tecnol%C3%B3gico/2026/08/19/qa-mas-alla-de-la-velocidad/" rel="alternate" type="text/html" title="La trampa de medir QA solo por la velocidad de ejecucion" /><published>2026-08-19T00:00:00+00:00</published><updated>2026-08-19T00:00:00+00:00</updated><id>https://tuusuario.github.io/quality%20assurance/testing/liderazgo%20tecnol%C3%B3gico/2026/08/19/qa-mas-alla-de-la-velocidad</id><content type="html" xml:base="https://tuusuario.github.io/quality%20assurance/testing/liderazgo%20tecnol%C3%B3gico/2026/08/19/qa-mas-alla-de-la-velocidad/"><![CDATA[<p>Medir el exito de QA por lo rapido que pasa el pipeline de CI/CD es el camino mas corto para enviar basura a produccion a maxima velocidad.</p>
+<p>#QualityAssurance #SoftwareTesting #TestAutomation #ECommerce #QAStrategy #SoftwareArchitecture</p>]]></content><author><name>Antonio</name><email>tu@email.com</email></author><category term="qa-strategy" /><summary type="html"><![CDATA[Migrar la pasarela de pago de un ecommerce no es un reto de código de test, es un problema de arquitectura, contratos y aislamiento de dependencias.]]></summary></entry><entry><title type="html">La trampa de medir QA solo por la velocidad de ejecucion</title><link href="https://tuusuario.github.io/quality%20assurance/testing/liderazgo%20tecnol%C3%B3gico/2026/08/19/qa-mas-alla-de-la-velocidad/" rel="alternate" type="text/html" title="La trampa de medir QA solo por la velocidad de ejecucion" /><published>2026-08-19T00:00:00+00:00</published><updated>2026-08-19T00:00:00+00:00</updated><id>https://tuusuario.github.io/quality%20assurance/testing/liderazgo%20tecnol%C3%B3gico/2026/08/19/qa-mas-alla-de-la-velocidad</id><content type="html" xml:base="https://tuusuario.github.io/quality%20assurance/testing/liderazgo%20tecnol%C3%B3gico/2026/08/19/qa-mas-alla-de-la-velocidad/"><![CDATA[<p>Medir el exito de QA por lo rapido que pasa el pipeline de CI/CD es el camino mas corto para enviar basura a produccion a maxima velocidad.</p>
 
 <p>En organizaciones de gran escala, con cientos de microservicios y equipos distribuidos entre Espana e India, hemos vendido la idea de que la automatizacion sirve para ir mas rapido. Nos equivocamos de enfoque. La automatizacion sirve para reducir la incertidumbre, no para acelerar entregas que nadie ha validado criticamente.</p>
 

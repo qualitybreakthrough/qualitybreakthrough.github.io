@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+    Trabajo previo para diseñar la estrategia de automatización de una funcionalidad core con dependencias de terceros — QA Insights
+  </title>
+  <meta name="description" content="Migrar la pasarela de pago de un ecommerce no es un reto de código de test, es un problema de arquitectura, contratos y aislamiento de dependencias.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/assets/css/style.css">
+
+  <!-- SEO -->
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Trabajo previo para diseñar la estrategia de automatización de una funcionalidad core con dependencias de terceros | QA Insights</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Trabajo previo para diseñar la estrategia de automatización de una funcionalidad core con dependencias de terceros" />
+<meta name="author" content="Antonio" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Migrar la pasarela de pago de un ecommerce no es un reto de código de test, es un problema de arquitectura, contratos y aislamiento de dependencias." />
+<meta property="og:description" content="Migrar la pasarela de pago de un ecommerce no es un reto de código de test, es un problema de arquitectura, contratos y aislamiento de dependencias." />
+<link rel="canonical" href="https://tuusuario.github.io/qa-strategy/2026/08/21/qa-automation-strategy/" />
+<meta property="og:url" content="https://tuusuario.github.io/qa-strategy/2026/08/21/qa-automation-strategy/" />
+<meta property="og:site_name" content="QA Insights" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-08-21T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Trabajo previo para diseñar la estrategia de automatización de una funcionalidad core con dependencias de terceros" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Antonio"},"dateModified":"2026-08-21T00:00:00+00:00","datePublished":"2026-08-21T00:00:00+00:00","description":"Migrar la pasarela de pago de un ecommerce no es un reto de código de test, es un problema de arquitectura, contratos y aislamiento de dependencias.","headline":"Trabajo previo para diseñar la estrategia de automatización de una funcionalidad core con dependencias de terceros","mainEntityOfPage":{"@type":"WebPage","@id":"https://tuusuario.github.io/qa-strategy/2026/08/21/qa-automation-strategy/"},"url":"https://tuusuario.github.io/qa-strategy/2026/08/21/qa-automation-strategy/"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+<body>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-close" onclick="toggleMenu()">✕</button>
+    <a href="/">Inicio</a>
+    <a href="/articulos/">Artículos</a>
+    <a href="/categorias/">Categorías</a>
+    <a href="/sobre-mi/">Sobre mí</a>
+    <a href="/newsletter/">Newsletter</a>
+  </div>
+
+  <!-- Nav -->
+  <nav class="site-nav">
+    <a href="/" class="nav-logo">
+      QA <em>Insights</em>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/">Inicio</a></li>
+      <li><a href="/articulos/">Artículos</a></li>
+      <li><a href="/categorias/">Categorías</a></li>
+      <li><a href="/sobre-mi/">Sobre mí</a></li>
+      <li><a href="/newsletter/" class="nav-cta">Newsletter</a></li>
+    </ul>
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Contenido principal -->
+  <main>
+    <article class="post-wrapper">
+
+  <header class="post-header fade-up">
+    
+      <a href="/categorias/qa-strategy" class="post-category-tag">
+        QA STRATEGY
+      </a>
+    
+
+    <h1 class="post-title">Trabajo previo para diseñar la estrategia de automatización de una funcionalidad core con dependencias de terceros</h1>
+
+    <div class="post-meta">
+      <span>21 Aug 2026</span>
+      
+        <span>⏱ 4 min de lectura</span>
+      
+      
+    </div>
+  </header>
+
+  <div class="post-content fade-up">
+    <p>Automatizar el flujo de checkout al cambiar la pasarela de pago de un ecommerce no es un reto de código. Es un problema de arquitectura, contratos y aislamiento.</p>
+
+<p>Lanzar tests automatizados directo contra la sandbox del proveedor externo solo genera latencia, timeouts, datos bloqueados y pipelines en rojo que todo el equipo termina ignorando.</p>
+
+<p>Antes de tirar una sola línea de código en el framework, la estrategia exige cuatro pasos previos indispensables:</p>
+
+<ol>
+  <li>
+    <p>Pruebas de contrato (Contract Testing)
+Validar esquemas de petición y respuesta entre nuestro ecommerce y el nuevo proveedor con herramientas tipo Pact. Garantizar que la estructura JSON, tipos de datos y cabeceras se respeten en ambas partes ahorra decenas de horas de depuración en la capa de UI.</p>
+  </li>
+  <li>
+    <p>Aislamiento con Mocks y Stubs para CI/CD
+La suite de regresión que corre en el pipeline debe ser rápida y determinista. Implementar servidores de mock (como WireMock o Mountebank) permite simular cobros exitosos, denegados o respuestas lentas sin tocar la red externa.</p>
+  </li>
+  <li>
+    <p>Definición del alcance E2E real
+Reservar los ejecuciones contra el sandbox real del tercero exclusivamente para una suite reducida de smoke tests o ejecuciones nocturnas. En este punto, la creación y limpieza de datos de prueba (tarjetas, credenciales de comercio) debe estar 100% orquestada.</p>
+  </li>
+  <li>
+    <p>Observabilidad y verificación asíncrona
+Diseñar cómo la automatización validará los eventos de fondo, especialmente los webhooks de confirmación. Si la suite solo evalúa la pantalla final del navegador, los fallos de procesamiento backend pasarán desapercibidos.</p>
+  </li>
+</ol>
+
+<p>La automatización que no aisla sus dependencias externas no aporta calidad, solo crea ruido.</p>
+
+<p>¿Cómo gestionáis en vuestros equipos el testing de flujos críticos dependientes de plataformas de terceros?</p>
+
+<p>#QualityAssurance #SoftwareTesting #TestAutomation #ECommerce #QAStrategy #SoftwareArchitecture</p>
+
+<p><strong>English version</strong></p>
+
+<p>Automating the checkout flow during a payment gateway migration is not a test coding challenge. It is an architecture, contract, and isolation problem.</p>
+
+<p>Running automated tests directly against a third-party sandbox only results in network latency, timeouts, locked test data, and broken pipelines that the team will eventually ignore.</p>
+
+<p>Before writing a single line of code in the framework, four essential steps must be established:</p>
+
+<ol>
+  <li>
+    <p>Contract Testing
+Validate request and response schemas between the ecommerce system and the new provider using tools like Pact. Ensuring JSON structure, data types, and headers match specifications saves dozens of UI-level debugging hours.</p>
+  </li>
+  <li>
+    <p>Mocking and Stubbing for CI/CD
+The regression suite running in CI/CD must be fast and deterministic. Implementing mock servers (such as WireMock or Mountebank) allows simulating successful, declined, or delayed transactions without relying on the external network.</p>
+  </li>
+  <li>
+    <p>Focused End-to-End Scope
+Reserve execution against the provider’s actual sandbox for a lean smoke test suite or nightly runs. At this level, test data management (test credit cards, merchant accounts) must be fully automated and orchestrated.</p>
+  </li>
+  <li>
+    <p>Observability and Asynchronous Event Verification
+Define how automation will assert background events, particularly confirmation webhooks. If the suite only checks the browser UI, critical backend processing failures will be missed.</p>
+  </li>
+</ol>
+
+<p>Automation that fails to isolate external dependencies does not provide quality, it only generates noise.</p>
+
+<p>How does your team handle automated testing for critical flows dependent on third-party services?</p>
+
+<p>#QualityAssurance #SoftwareTesting #TestAutomation #ECommerce #QAStrategy #SoftwareArchitecture</p>
+
+  </div>
+
+  <!-- Footer del post: autor -->
+  <footer class="post-footer fade-up">
+    <div class="hero-avatar" style="width:56px;height:56px;font-size:1.3rem;">
+      A
+    </div>
+    <div>
+      <strong style="display:block;font-family:var(--serif);font-size:1rem;">
+        Antonio
+      </strong>
+      <span style="font-size:.82rem;color:var(--muted);">Head of QA · Carrefour Spain</span>
+    </div>
+  </footer>
+
+  <!-- Artículos relacionados -->
+  
+  
+  
+  <section style="margin-top:64px;">
+    <div class="section-label" style="margin-bottom:24px;">✦ También te puede interesar</div>
+    <div class="articles-grid" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr));">
+      
+        
+
+
+<a href="/qa-strategy/2026/06/08/tdm-test-data-management/" class="article-card fade-up">
+  <div class="article-thumb thumb-qa-strategy">
+    <span>🧪</span>
+    <span class="article-cat">QA STRATEGY</span>
+  </div>
+  <div class="article-body">
+    <div class="article-meta">
+      8 Jun 2026
+       · QA STRATEGY
+    </div>
+    <h3 class="article-title">TDM: Por qué el Test Data Management es la próxima gran batalla del QA</h3>
+    <p class="article-excerpt">Las organizaciones siguen luchando con datos de prueba incoherentes. Aquí el enfoque que estamos adoptando en Carrefour para re...</p>
+    <div class="article-footer">
+      <span class="read-time">⏱ 8 min</span>
+      <span class="read-link">Leer →</span>
+    </div>
+  </div>
+</a>
+
+      
+    </div>
+  </section>
+  
+
+</article>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>
+      © 2026 QA Insights ·
+      Escrito desde Madrid con ☕ ·
+      <a href="https://linkedin.com/in/tuusuario" target="_blank" rel="noopener">LinkedIn</a> ·
+      <a href="/feed.xml">RSS</a>
+    </p>
+  </footer>
+
+  <!-- JS -->
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>
