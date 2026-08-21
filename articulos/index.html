@@ -1,0 +1,105 @@
+---
+layout: default
+title: Artículos
+permalink: /articulos/
+---
+
+<section class="site-section">
+  <div class="section-header">
+    <div>
+      <div class="section-label">✦ Archivo completo</div>
+      <h2 class="section-title">Todos los artículos</h2>
+    </div>
+    <span style="font-family:var(--mono);font-size:.8rem;color:var(--muted);">
+      {{ site.posts | size }} publicaciones
+    </span>
+  </div>
+
+  <!-- Filtros por categoría -->
+  <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:48px;">
+    <button class="filter-btn active" data-filter="all">Todos</button>
+    {% for cat in site.categories_list %}
+      {% assign count = site.posts | where_exp: "p", "p.categories contains cat.slug" | size %}
+      {% if count > 0 %}
+        <button class="filter-btn" data-filter="{{ cat.slug }}">
+          {{ cat.icon }} {{ cat.label }}
+        </button>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  <!-- Grid de artículos -->
+  <div class="articles-grid" id="articlesGrid">
+    {% for post in site.posts %}
+      {% assign cat_slug = post.categories.first | default: 'default' %}
+      <a href="{{ post.url | relative_url }}"
+         class="article-card fade-up"
+         data-category="{{ cat_slug }}">
+        <div class="article-thumb thumb-{{ cat_slug }}">
+          <span>{{ post.icon | default: '📝' }}</span>
+          <span class="article-cat">{{ post.categories.first | replace: '-', ' ' | upcase }}</span>
+        </div>
+        <div class="article-body">
+          <div class="article-meta">
+            {{ post.date | date: "%-d %b %Y" }}
+            {% if post.read_time %} · {{ post.read_time }} min{% endif %}
+          </div>
+          <h3 class="article-title">{{ post.title }}</h3>
+          <p class="article-excerpt">{{ post.excerpt | strip_html | truncate: 120 }}</p>
+          <div class="article-footer">
+            <span class="read-time">{% if post.read_time %}⏱ {{ post.read_time }} min{% endif %}</span>
+            <span class="read-link">Leer →</span>
+          </div>
+        </div>
+      </a>
+    {% endfor %}
+  </div>
+
+  {% if site.posts.size == 0 %}
+    <p style="color:var(--muted);font-family:var(--mono);text-align:center;padding:60px 0;">
+      Aún no hay artículos publicados.
+    </p>
+  {% endif %}
+</section>
+
+<style>
+.filter-btn {
+  background: var(--white);
+  border: 1.5px solid var(--surface);
+  border-radius: 24px;
+  padding: 8px 18px;
+  font-family: var(--sans);
+  font-size: .8rem;
+  color: var(--muted);
+  cursor: pointer;
+  transition: all .2s;
+}
+.filter-btn:hover,
+.filter-btn.active {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--white);
+}
+.article-card[hidden] { display: none; }
+</style>
+
+<script>
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const filter = btn.dataset.filter;
+
+    // Estado visual de botones
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+
+    // Filtrar tarjetas
+    document.querySelectorAll('#articlesGrid .article-card').forEach(card => {
+      if (filter === 'all' || card.dataset.category === filter) {
+        card.removeAttribute('hidden');
+      } else {
+        card.setAttribute('hidden', '');
+      }
+    });
+  });
+});
+</script>
