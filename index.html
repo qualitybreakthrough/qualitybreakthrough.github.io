@@ -91,13 +91,58 @@
   </div>
 
   <!-- Artículo destacado en hero -->
+  <!-- Hero visual — carrusel de últimos 3 posts -->
   <div class="hero-visual">
     <div class="hero-visual-inner">
+ 
       
+ 
       
-      
-      <div class="featured-card fade-up">
+      <div class="featured-card active"
+           data-index="0">
         <div class="fc-tag">✦ Artículo destacado</div>
+        <h2 class="fc-title">Trabajo previo para diseñar la estrategia de automatización de una funcionalidad core con dependencias de terceros</h2>
+        <p class="fc-excerpt">Migrar la pasarela de pago de un ecommerce no es un reto de código de test, es un problema de arquitectura, contratos y aislamiento de dependencias.</p>
+        <div class="fc-footer">
+          <span class="fc-date">
+            Aug 2026
+             · 4 min lectura
+          </span>
+          <a href="/qa-strategy/2026/08/21/qa-automation-strategy/" class="fc-read">Leer más →</a>
+        </div>
+      </div>
+      
+      <div class="featured-card "
+           data-index="1">
+        <div class="fc-tag">✦ También te puede interesar</div>
+        <h2 class="fc-title">Aplicación de AI testing en Factorías como motor de aceleración</h2>
+        <p class="fc-excerpt">Usar Inteligencia Artificial en una factoría de software únicamente para escribir scripts más rápido es un desperdicio operativo. La verdadera aceleración ocurre cuando la IA re...</p>
+        <div class="fc-footer">
+          <span class="fc-date">
+            Aug 2026
+             · 4 min lectura
+          </span>
+          <a href="/qa%20strategy/ai%20testing/software%20factories/2026/08/19/ai-testing-beyond-faster-test-creation/" class="fc-read">Leer más →</a>
+        </div>
+      </div>
+      
+      <div class="featured-card "
+           data-index="2">
+        <div class="fc-tag">✦ También te puede interesar</div>
+        <h2 class="fc-title">La trampa de medir QA solo por la velocidad de ejecucion</h2>
+        <p class="fc-excerpt">Analisis sobre por que optimizar los pipelines de testing para obtener velocidad sin considerar el impacto en negocio destruye la estrategia de calidad en grandes organizaciones.</p>
+        <div class="fc-footer">
+          <span class="fc-date">
+            Aug 2026
+             · 4 min lectura
+          </span>
+          <a href="/quality%20assurance/testing/liderazgo%20tecnol%C3%B3gico/2026/08/19/qa-mas-alla-de-la-velocidad/" class="fc-read">Leer más →</a>
+        </div>
+      </div>
+      
+      <div class="featured-card "
+           data-index="3">
+        <div class="fc-tag">✦ También te puede interesar</div>
         <h2 class="fc-title">TDM: Por qué el Test Data Management es la próxima gran batalla del QA</h2>
         <p class="fc-excerpt">Las organizaciones siguen luchando con datos de prueba incoherentes. Aquí el enfoque que estamos adoptando en Carrefour para resolverlo de raíz.</p>
         <div class="fc-footer">
@@ -109,11 +154,36 @@
         </div>
       </div>
       
+ 
     </div>
-    <div class="hero-dots">
-      <span class="active"></span><span></span><span></span>
+ 
+    <!-- Puntos de navegación -->
+    <div class="hero-dots" id="heroDots">
+      
+        <span class="active"
+              data-dot="0"
+              onclick="goToSlide(0)">
+        </span>
+      
+        <span class=""
+              data-dot="1"
+              onclick="goToSlide(1)">
+        </span>
+      
+        <span class=""
+              data-dot="2"
+              onclick="goToSlide(2)">
+        </span>
+      
+        <span class=""
+              data-dot="3"
+              onclick="goToSlide(3)">
+        </span>
+      
     </div>
+ 
   </div>
+ 
 
 </div>
 
