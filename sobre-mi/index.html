@@ -66,41 +66,31 @@
   <!-- Contenido principal -->
   <main>
     <!-- ═══ HERO SOBRE MÍ ════════════════════════ -->
-<section style="background:var(--ink);color:white;padding:80px 5%;">
-  <div style="max-width:900px;margin:0 auto;display:grid;grid-template-columns:auto 1fr;gap:56px;align-items:center;">
+<section class="about-hero">
+  <div class="about-hero-inner">
 
-    <div style="display:flex;flex-direction:column;align-items:center;gap:16px;flex-shrink:0;">
-      <div style="width:140px;height:140px;border-radius:50%;
-                  background:linear-gradient(135deg,var(--accent),var(--gold));
-                  display:flex;align-items:center;justify-content:center;
-                  font-family:var(--serif);font-size:3.5rem;color:white;">
+    <div class="about-hero-avatar-col">
+      <div class="about-avatar-circle">
         AMD
       </div>
-      <div style="display:flex;flex-direction:column;gap:8px;width:100%;">
-        <a href="https://linkedin.com/in/antoniomontero-dorado" target="_blank" rel="noopener" class="social-link"
-           style="border-color:rgba(255,255,255,.15);color:rgba(255,255,255,.6);">
+      <div class="about-hero-links">
+        <a href="https://linkedin.com/in/antoniomontero-dorado" target="_blank" rel="noopener" class="social-link about-social-link">
           💼 LinkedIn
         </a>
-        <a href="mailto:quality.breakthrough@gmail.com" class="social-link"
-           style="border-color:rgba(255,255,255,.15);color:rgba(255,255,255,.6);">
+        <a href="mailto:quality.breakthrough@gmail.com" class="social-link about-social-link">
           ✉️ quality.breakthrough@gmail.com
         </a>
-        <a href="/feed.xml" class="social-link"
-           style="border-color:rgba(255,255,255,.15);color:rgba(255,255,255,.6);">
+        <a href="/feed.xml" class="social-link about-social-link">
           📡 Feed RSS
         </a>
       </div>
     </div>
 
-    <div class="fade-up" style="display:flex;flex-direction:column;gap:20px;">
+    <div class="about-hero-text fade-up">
       <div class="section-label" style="color:var(--gold);">✦ Head of Quality Assurance</div>
-      <h1 style="font-family:var(--serif);font-size:clamp(2rem,4vw,3rem);line-height:1.1;">
-        Antonio
-      </h1>
-      <p style="font-size:1.05rem;color:rgba(255,255,255,.7);line-height:1.75;max-width:520px;">
-        15+ años en calidad de software en grandes organizaciones. Escribo sobre lo que aprendo gestionando equipos, procesos y la adopción de IA en QA. Sin filtros corporativos.
-      </p>
-      <div style="display:flex;gap:16px;flex-wrap:wrap;padding-top:8px;">
+      <h1 class="about-hero-h1">Antonio</h1>
+      <p class="about-hero-bio">15+ años en calidad de software en grandes organizaciones. Escribo sobre lo que aprendo gestionando equipos, procesos y la adopción de IA en QA. Sin filtros corporativos.</p>
+      <div class="about-hero-btns">
         <a href="/articulos/" class="btn-primary">Leer mis artículos →</a>
       </div>
     </div>
@@ -129,7 +119,7 @@
 </div>
 
 <!-- ═══ TRAYECTORIA ═══════════════════════════ -->
-<section class="site-section" style="max-width:900px;margin:0 auto;">
+<section class="site-section about-section-narrow">
 
   <div class="section-header">
     <div>
@@ -138,11 +128,7 @@
     </div>
   </div>
 
-  <div style="display:flex;flex-direction:column;gap:0;">
-
-    
-
-    <!-- Item 1 -->
+  <div>
     <div class="timeline-item fade-up">
       <div class="timeline-dot"></div>
       <div class="timeline-content">
@@ -154,7 +140,7 @@
           migración de TestLink a XRay Enterprise Cloud con más de 60.000 casos de prueba, y desarrollo de marcos
           de gobernanza QA: presupuesto, entornos no productivos y Test Data Management.
         </p>
-        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px;">
+        <div class="skill-tags">
           <span class="skill-tag">XRay · TestLink</span>
           <span class="skill-tag">Selenium · Pytest</span>
           <span class="skill-tag">Jenkins · GitHub Actions</span>
@@ -163,7 +149,6 @@
       </div>
     </div>
 
-    <!-- Item 2 — personaliza con tu experiencia real anterior -->
     <div class="timeline-item fade-up">
       <div class="timeline-dot"></div>
       <div class="timeline-content">
@@ -172,18 +157,17 @@
         <div class="timeline-company">Empresa anterior · Ciudad</div>
         <p class="timeline-desc">
           Descripción de tu etapa anterior. Puedes editar esto directamente en
-          <code>sobre-mi/index.html</code> o crear un fichero <code>_data/timeline.yml</code>
-          para gestionarlo desde datos.
+          <code>sobre-mi/index.html</code>.
         </p>
       </div>
     </div>
-
   </div>
+
 </section>
 
 <!-- ═══ SOBRE ESTE BLOG ═══════════════════════ -->
 <section class="site-section cats-section">
-  <div style="max-width:900px;margin:0 auto;">
+  <div class="about-section-narrow">
 
     <div class="section-header">
       <div>
@@ -192,39 +176,39 @@
       </div>
     </div>
 
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;">
+    <div class="about-reasons-grid">
 
       <div class="about-reason-card fade-up">
-        <span style="font-size:2rem;margin-bottom:12px;display:block;">🧠</span>
-        <h3 style="font-family:var(--serif);font-size:1.15rem;margin-bottom:10px;">Consolidar lo aprendido</h3>
-        <p style="font-size:.875rem;color:var(--muted);line-height:1.7;">
+        <span class="about-reason-icon">🧠</span>
+        <h3 class="about-reason-title">Consolidar lo aprendido</h3>
+        <p class="about-reason-desc">
           Escribir me obliga a estructurar ideas que de otra forma se quedan en notas dispersas.
           Este blog es mi segunda memoria.
         </p>
       </div>
 
       <div class="about-reason-card fade-up">
-        <span style="font-size:2rem;margin-bottom:12px;display:block;">🤝</span>
-        <h3 style="font-family:var(--serif);font-size:1.15rem;margin-bottom:10px;">Devolver a la comunidad</h3>
-        <p style="font-size:.875rem;color:var(--muted);line-height:1.7;">
+        <span class="about-reason-icon">🤝</span>
+        <h3 class="about-reason-title">Devolver a la comunidad</h3>
+        <p class="about-reason-desc">
           Aprendí mucho leyendo a otros profesionales. Compartir mis errores y soluciones
           es la forma más directa de contribuir.
         </p>
       </div>
 
       <div class="about-reason-card fade-up">
-        <span style="font-size:2rem;margin-bottom:12px;display:block;">🎯</span>
-        <h3 style="font-family:var(--serif);font-size:1.15rem;margin-bottom:10px;">Sin filtro corporativo</h3>
-        <p style="font-size:.875rem;color:var(--muted);line-height:1.7;">
+        <span class="about-reason-icon">🎯</span>
+        <h3 class="about-reason-title">Sin filtro corporativo</h3>
+        <p class="about-reason-desc">
           Las reflexiones que no puedo escribir en un informe interno las escribo aquí.
           Con nombres cambiados, pero con situaciones reales.
         </p>
       </div>
 
       <div class="about-reason-card fade-up">
-        <span style="font-size:2rem;margin-bottom:12px;display:block;">📡</span>
-        <h3 style="font-family:var(--serif);font-size:1.15rem;margin-bottom:10px;">Conectar con profesionales</h3>
-        <p style="font-size:.875rem;color:var(--muted);line-height:1.7;">
+        <span class="about-reason-icon">📡</span>
+        <h3 class="about-reason-title">Conectar con profesionales</h3>
+        <p class="about-reason-desc">
           Algunos de los mejores proyectos y conversaciones que he tenido empezaron
           con alguien leyendo un post mío en LinkedIn.
         </p>
@@ -235,7 +219,7 @@
 </section>
 
 <!-- ═══ TEMAS QUE TRATO ═══════════════════════ -->
-<section class="site-section" style="max-width:900px;margin:0 auto;padding-top:0;">
+<section class="site-section about-section-narrow" style="padding-top:0;">
   <div class="section-header">
     <div>
       <div class="section-label">✦ De qué hablo</div>
@@ -304,9 +288,80 @@
   </div>
 </section>
 
-
 <style>
-/* Timeline */
+/* ── Hero ───────────────────────────────────── */
+.about-hero {
+  background: var(--ink);
+  color: white;
+  padding: 80px 5%;
+}
+.about-hero-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 56px;
+  align-items: center;
+}
+.about-hero-avatar-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  flex-shrink: 0;
+}
+.about-avatar-circle {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), var(--gold));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--serif);
+  font-size: 3.5rem;
+  color: white;
+}
+.about-hero-links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+.about-social-link {
+  border-color: rgba(255,255,255,.15) !important;
+  color: rgba(255,255,255,.6) !important;
+}
+.about-hero-text {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.about-hero-h1 {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.1;
+}
+.about-hero-bio {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,.7);
+  line-height: 1.75;
+  max-width: 520px;
+}
+.about-hero-btns {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding-top: 8px;
+}
+
+/* ── Layout helper ──────────────────────────── */
+.about-section-narrow {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* ── Timeline ───────────────────────────────── */
 .timeline-item {
   display: grid;
   grid-template-columns: 20px 1fr;
@@ -324,9 +379,9 @@
   background: var(--surface);
 }
 .timeline-item:last-child::before { display: none; }
-
 .timeline-dot {
-  width: 20px; height: 20px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
   background: var(--accent);
   flex-shrink: 0;
@@ -357,6 +412,12 @@
   color: var(--muted);
   line-height: 1.7;
 }
+.skill-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
 .skill-tag {
   background: var(--surface);
   color: var(--ink);
@@ -367,31 +428,82 @@
   display: inline-block;
 }
 
-/* About reason cards */
+/* ── Razones blog ───────────────────────────── */
+.about-reasons-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
 .about-reason-card {
   background: var(--white);
   border-radius: 14px;
   padding: 28px 24px;
   box-shadow: var(--shadow);
 }
+.about-reason-icon {
+  font-size: 2rem;
+  margin-bottom: 12px;
+  display: block;
+}
+.about-reason-title {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  margin-bottom: 10px;
+}
+.about-reason-desc {
+  font-size: .875rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
 
-/* Responsive */
+/* ── RESPONSIVE MÓVIL ───────────────────────── */
 @media (max-width: 768px) {
-  section > div[style*="grid-template-columns: auto 1fr"] {
-    grid-template-columns: 1fr !important;
+
+  /* Hero: apila avatar encima del texto */
+  .about-hero { padding: 48px 5%; }
+  .about-hero-inner {
+    grid-template-columns: 1fr;
+    gap: 32px;
     text-align: center;
   }
-  .about-reason-card-grid {
-    grid-template-columns: 1fr !important;
+  .about-hero-avatar-col { align-items: center; }
+  .about-hero-links { align-items: center; }
+  .about-hero-bio { max-width: 100%; }
+  .about-hero-btns { justify-content: center; }
+
+  /* Timeline: reduce el gutter lateral */
+  .timeline-item {
+    grid-template-columns: 14px 1fr;
+    gap: 0 16px;
   }
-  .timeline-item { grid-template-columns: 16px 1fr; gap: 0 20px; }
+  .timeline-dot { width: 14px; height: 14px; }
+  .timeline-item::before { left: 6px; }
+
+  /* Razones: una columna */
+  .about-reasons-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Stats: 2x2 */
+  .stats-strip {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .stat-item:nth-child(2) { border-right: none; }
+  .stat-item:nth-child(3) {
+    border-right: 1px solid rgba(255,255,255,.25);
+    border-top: 1px solid rgba(255,255,255,.25);
+  }
+  .stat-item:nth-child(4) {
+    border-top: 1px solid rgba(255,255,255,.25);
+  }
 }
-@media (max-width: 600px) {
-  div[style*="grid-template-columns:1fr 1fr"] {
-    grid-template-columns: 1fr !important;
-  }
+
+@media (max-width: 480px) {
+  .about-avatar-circle { width: 100px; height: 100px; font-size: 2.5rem; }
+  .about-hero-h1 { font-size: 1.8rem; }
 }
 </style>
+
   </main>
 
   <!-- Footer -->
