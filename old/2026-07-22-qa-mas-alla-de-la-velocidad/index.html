@@ -87,7 +87,10 @@
       </a>
     
 
-    <h1 class="post-title">La trampa de medir QA solo por la velocidad de ejecucion</h1>
+    <h1 class="post-title" id="postTitle">La trampa de medir QA solo por la velocidad de ejecucion</h1>
+
+    <!-- Títulos ocultos para el JS — solo si hay versión EN -->
+    
 
     <div class="post-meta">
       <span>19 Aug 2026</span>
@@ -96,44 +99,22 @@
       
       
     </div>
+
+    <!-- Switch de idioma — solo aparece si el post tiene content_en -->
+    
+
   </header>
 
-  <div class="post-content fade-up">
-    <p>Medir el exito de QA por lo rapido que pasa el pipeline de CI/CD es el camino mas corto para enviar basura a produccion a maxima velocidad.</p>
-
-<p>En organizaciones de gran escala, con cientos de microservicios y equipos distribuidos entre Espana e India, hemos vendido la idea de que la automatizacion sirve para ir mas rapido. Nos equivocamos de enfoque. La automatizacion sirve para reducir la incertidumbre, no para acelerar entregas que nadie ha validado criticamente.</p>
-
-<p>Cuando un suite de tests ejecuta diez mil verificaciones en cinco minutos pero nadie sabe que riesgo real cubren, la metrica de velocidad es solo vanidad. Si el checkout de un e-commerce falla durante una campana critica por un caso borde que ningun test automatizado contemplaba, el tiempo ahorrado en la ejecucion del pipeline pasa a valer cero.</p>
-
-<p>La IA y las herramientas modernas de auto-healing ayudan a reducir el mantenimiento de scripts, pero no piensan por el equipo. La inteligencia artificial no entiende el contexto del negocio, no conoce las prioridades de los usuarios en tienda ni anticipa como impactara una migracion de arquitectura en la operacion diaria.</p>
-
-<p>El verdadero valor de un equipo de testing moderno no esta en escribir codigo de automatizacion a ciegas ni en acumular herramientas. Esta en saber exactamente que no probar, donde concentrar el riesgo y como construir una cultura donde la responsabilidad de la calidad pertenezca a toda la organizacion.</p>
-
-<p>¿Cuantos de los tests que ejecutas hoy en tu pipeline realmente aportan informacion util para tomar decisiones de despliegue?</p>
-
-<p>#QualityAssurance #SoftwareTesting #AITesting #SoftwareEngineering #TechLeadership</p>
-
-<hr />
-
-<p><strong>English version</strong></p>
-
-<p>Measuring QA success strictly by how fast the CI/CD pipeline runs is the shortest path to pushing bugs into production at maximum speed.</p>
-
-<p>In large-scale organizations, with hundreds of microservices and distributed teams across Europe and India, we have bought into the idea that automation exists solely for speed. We got the focus wrong. Automation exists to reduce uncertainty, not to accelerate deployments that no one has critically validated.</p>
-
-<p>When a test suite runs ten thousand checks in five minutes but no one understands what actual business risk they cover, velocity metrics become pure vanity. If an e-commerce checkout fails during a peak sales event due to an edge case no automated test accounted for, the execution time saved in the pipeline is worth nothing.</p>
-
-<p>AI and modern self-healing tools help reduce script maintenance, but they do not think for the team. Artificial intelligence does not understand business context, does not know user priorities in physical stores, nor does it anticipate how a core tool migration impacts daily operations.</p>
-
-<p>The real value of a modern quality engineering team is not in blindly writing test code or hoarding tools. It lies in knowing exactly what not to test, where to focus risk, and how to build a culture where quality ownership belongs to the entire organization.</p>
-
-<p>How many of the tests running in your pipeline today actually provide meaningful data to make a deployment decision?</p>
-
-<p>#QualityAssurance #SoftwareTesting #AITesting #SoftwareEngineering #TechLeadership</p>
+  <!-- Contenido ES — visible por defecto -->
+  <div class="post-content fade-up" id="postContentEs">
+    
 
   </div>
 
-  <!-- Footer del post: autor -->
+  <!-- Contenido EN — oculto por defecto -->
+  
+
+  <!-- Footer: autor -->
   <footer class="post-footer fade-up">
     <div class="hero-avatar" style="width:56px;height:56px;font-size:1.3rem;">
       AMD
@@ -152,6 +133,134 @@
   
 
 </article>
+
+<style>
+/* ── Switch de idioma ───────────────────────── */
+.post-lang-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+  padding: 10px 16px;
+  background: var(--surface);
+  border-radius: 30px;
+  user-select: none;
+}
+
+.post-lang-label {
+  font-family: var(--mono);
+  font-size: .72rem;
+  color: var(--muted);
+  letter-spacing: .06em;
+  min-width: 140px;
+}
+
+.lang-switch-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.lang-switch-track {
+  width: 40px;
+  height: 22px;
+  background: var(--surface);
+  border: 2px solid var(--muted);
+  border-radius: 11px;
+  position: relative;
+  display: block;
+  transition: background .25s, border-color .25s;
+}
+
+.lang-switch-thumb {
+  width: 14px;
+  height: 14px;
+  background: var(--muted);
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: transform .25s, background .25s;
+  display: block;
+}
+
+/* Estado activo (EN) */
+.lang-switch-btn.active .lang-switch-track {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+.lang-switch-btn.active .lang-switch-thumb {
+  transform: translateX(18px);
+  background: white;
+}
+
+.lang-switch-text {
+  font-family: var(--mono);
+  font-size: .75rem;
+  font-weight: 500;
+  color: var(--muted);
+  letter-spacing: .08em;
+  transition: color .2s;
+  width: 18px;
+}
+.lang-switch-btn.active .lang-switch-text {
+  color: var(--accent);
+}
+
+/* Transición suave del contenido */
+.post-content {
+  animation: contentFade .3s ease;
+}
+@keyframes contentFade {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+</style>
+
+<script>
+(function () {
+  var isEN = false;
+
+  window.togglePostLang = function () {
+    isEN = !isEN;
+
+    var esBlock = document.getElementById('postContentEs');
+    var enBlock = document.getElementById('postContentEn');
+    var btn     = document.getElementById('langSwitchBtn');
+    var label   = document.getElementById('langLabel');
+    var btnText = document.getElementById('langSwitchText');
+    var title   = document.getElementById('postTitle');
+    var titleEs = document.getElementById('postTitleEs');
+    var titleEn = document.getElementById('postTitleEn');
+
+    if (isEN) {
+      esBlock.style.display = 'none';
+      enBlock.style.display = 'block';
+      enBlock.style.animation = 'none';
+      enBlock.offsetHeight;
+      enBlock.style.animation = '';
+      btn.classList.add('active');
+      label.textContent = 'English version';
+      btnText.textContent = 'ES';
+      if (title && titleEn) title.textContent = titleEn.textContent;
+    } else {
+      enBlock.style.display = 'none';
+      esBlock.style.display = 'block';
+      esBlock.style.animation = 'none';
+      esBlock.offsetHeight;
+      esBlock.style.animation = '';
+      btn.classList.remove('active');
+      label.textContent = 'Versión en español';
+      btnText.textContent = 'EN';
+      if (title && titleEs) title.textContent = titleEs.textContent;
+    }
+  };
+})();
+</script>
 
   </main>
 

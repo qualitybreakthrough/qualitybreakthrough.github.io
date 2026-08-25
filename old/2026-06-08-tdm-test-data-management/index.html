@@ -87,7 +87,10 @@
       </a>
     
 
-    <h1 class="post-title">TDM: Por qué el Test Data Management es la próxima gran batalla del QA</h1>
+    <h1 class="post-title" id="postTitle">TDM: Por qué el Test Data Management es la próxima gran batalla del QA</h1>
+
+    <!-- Títulos ocultos para el JS — solo si hay versión EN -->
+    
 
     <div class="post-meta">
       <span>8 Jun 2026</span>
@@ -96,48 +99,22 @@
       
       
     </div>
+
+    <!-- Switch de idioma — solo aparece si el post tiene content_en -->
+    
+
   </header>
 
-  <div class="post-content fade-up">
-    <p>Las organizaciones siguen luchando con datos de prueba incoherentes. El problema no es técnico: es estratégico.</p>
-
-<h2 id="el-diagnóstico-real">El diagnóstico real</h2>
-
-<p>Después de tres años gestionando entornos de prueba en Carrefour Spain, el patrón es siempre el mismo: los equipos pasan el 30-40% de su tiempo de testing gestionando datos, no ejecutando pruebas.</p>
-
-<p>La causa raíz no es la falta de herramientas. Es la ausencia de una estrategia clara de TDM que alinee a los equipos de desarrollo, QA y negocio.</p>
-
-<h2 id="qué-significa-tdm-bien-hecho">Qué significa TDM bien hecho</h2>
-
-<p>Un buen Test Data Management implica tres dimensiones:</p>
-
-<p><strong>1. Consistencia entre entornos</strong> — Los datos de DEV, QA y PRE deben ser representativos y actualizados. No hay nada más peligroso que un bug que solo aparece en producción porque los datos de prueba eran demasiado simples.</p>
-
-<p><strong>2. Privacidad y compliance</strong> — Con GDPR, no puedes usar datos reales de clientes. Necesitas anonimización, enmascaramiento y generación sintética. Esto no es opcional.</p>
-
-<p><strong>3. Velocidad de aprovisionamiento</strong> — Si un tester tiene que esperar 2 días para obtener datos para su suite de regresión, algo falla en el proceso.</p>
-
-<h2 id="el-enfoque-que-estamos-adoptando">El enfoque que estamos adoptando</h2>
-
-<p>En lugar de comprar una herramienta TDM desde el principio, hemos dividido el problema:</p>
-
-<ul>
-  <li><strong>Fase 1</strong>: Catálogo de datasets por dominio de negocio (frescos, moda, electrónica…)</li>
-  <li><strong>Fase 2</strong>: Scripts de generación sintética basados en reglas de negocio reales</li>
-  <li><strong>Fase 3</strong>: Integración con el pipeline CI/CD para aprovisionamiento automático</li>
-</ul>
-
-<p>¿Es perfecto? No. ¿Es pragmático? Absolutamente.</p>
-
-<h2 id="la-pregunta-que-deberías-hacerte">La pregunta que deberías hacerte</h2>
-
-<p>¿Cuánto tiempo pierden tus equipos buscando, creando o reparando datos de prueba cada semana?</p>
-
-<p>Si la respuesta supera las 4 horas por tester, tienes un problema de TDM. Y es solucionable.</p>
+  <!-- Contenido ES — visible por defecto -->
+  <div class="post-content fade-up" id="postContentEs">
+    
 
   </div>
 
-  <!-- Footer del post: autor -->
+  <!-- Contenido EN — oculto por defecto -->
+  
+
+  <!-- Footer: autor -->
   <footer class="post-footer fade-up">
     <div class="hero-avatar" style="width:56px;height:56px;font-size:1.3rem;">
       AMD
@@ -156,6 +133,134 @@
   
 
 </article>
+
+<style>
+/* ── Switch de idioma ───────────────────────── */
+.post-lang-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+  padding: 10px 16px;
+  background: var(--surface);
+  border-radius: 30px;
+  user-select: none;
+}
+
+.post-lang-label {
+  font-family: var(--mono);
+  font-size: .72rem;
+  color: var(--muted);
+  letter-spacing: .06em;
+  min-width: 140px;
+}
+
+.lang-switch-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.lang-switch-track {
+  width: 40px;
+  height: 22px;
+  background: var(--surface);
+  border: 2px solid var(--muted);
+  border-radius: 11px;
+  position: relative;
+  display: block;
+  transition: background .25s, border-color .25s;
+}
+
+.lang-switch-thumb {
+  width: 14px;
+  height: 14px;
+  background: var(--muted);
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: transform .25s, background .25s;
+  display: block;
+}
+
+/* Estado activo (EN) */
+.lang-switch-btn.active .lang-switch-track {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+.lang-switch-btn.active .lang-switch-thumb {
+  transform: translateX(18px);
+  background: white;
+}
+
+.lang-switch-text {
+  font-family: var(--mono);
+  font-size: .75rem;
+  font-weight: 500;
+  color: var(--muted);
+  letter-spacing: .08em;
+  transition: color .2s;
+  width: 18px;
+}
+.lang-switch-btn.active .lang-switch-text {
+  color: var(--accent);
+}
+
+/* Transición suave del contenido */
+.post-content {
+  animation: contentFade .3s ease;
+}
+@keyframes contentFade {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+</style>
+
+<script>
+(function () {
+  var isEN = false;
+
+  window.togglePostLang = function () {
+    isEN = !isEN;
+
+    var esBlock = document.getElementById('postContentEs');
+    var enBlock = document.getElementById('postContentEn');
+    var btn     = document.getElementById('langSwitchBtn');
+    var label   = document.getElementById('langLabel');
+    var btnText = document.getElementById('langSwitchText');
+    var title   = document.getElementById('postTitle');
+    var titleEs = document.getElementById('postTitleEs');
+    var titleEn = document.getElementById('postTitleEn');
+
+    if (isEN) {
+      esBlock.style.display = 'none';
+      enBlock.style.display = 'block';
+      enBlock.style.animation = 'none';
+      enBlock.offsetHeight;
+      enBlock.style.animation = '';
+      btn.classList.add('active');
+      label.textContent = 'English version';
+      btnText.textContent = 'ES';
+      if (title && titleEn) title.textContent = titleEn.textContent;
+    } else {
+      enBlock.style.display = 'none';
+      esBlock.style.display = 'block';
+      esBlock.style.animation = 'none';
+      esBlock.offsetHeight;
+      esBlock.style.animation = '';
+      btn.classList.remove('active');
+      label.textContent = 'Versión en español';
+      btnText.textContent = 'EN';
+      if (title && titleEs) title.textContent = titleEs.textContent;
+    }
+  };
+})();
+</script>
 
   </main>
 

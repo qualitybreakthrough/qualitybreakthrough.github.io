@@ -87,7 +87,10 @@
       </a>
     
 
-    <h1 class="post-title">Trabajo previo para diseñar la estrategia de automatización de una funcionalidad core con dependencias de terceros</h1>
+    <h1 class="post-title" id="postTitle">Trabajo previo para diseñar la estrategia de automatización de una funcionalidad core con dependencias de terceros</h1>
+
+    <!-- Títulos ocultos para el JS — solo si hay versión EN -->
+    
 
     <div class="post-meta">
       <span>21 Aug 2026</span>
@@ -96,76 +99,22 @@
       
       
     </div>
+
+    <!-- Switch de idioma — solo aparece si el post tiene content_en -->
+    
+
   </header>
 
-  <div class="post-content fade-up">
-    <p>Automatizar el flujo de checkout al cambiar la pasarela de pago de un ecommerce no es un reto de código. Es un problema de arquitectura, contratos y aislamiento.</p>
-
-<p>Lanzar tests automatizados directo contra la sandbox del proveedor externo solo genera latencia, timeouts, datos bloqueados y pipelines en rojo que todo el equipo termina ignorando.</p>
-
-<p>Antes de tirar una sola línea de código en el framework, la estrategia exige cuatro pasos previos indispensables:</p>
-
-<ol>
-  <li>
-    <p>Pruebas de contrato (Contract Testing)
-Validar esquemas de petición y respuesta entre nuestro ecommerce y el nuevo proveedor con herramientas tipo Pact. Garantizar que la estructura JSON, tipos de datos y cabeceras se respeten en ambas partes ahorra decenas de horas de depuración en la capa de UI.</p>
-  </li>
-  <li>
-    <p>Aislamiento con Mocks y Stubs para CI/CD
-La suite de regresión que corre en el pipeline debe ser rápida y determinista. Implementar servidores de mock (como WireMock o Mountebank) permite simular cobros exitosos, denegados o respuestas lentas sin tocar la red externa.</p>
-  </li>
-  <li>
-    <p>Definición del alcance E2E real
-Reservar los ejecuciones contra el sandbox real del tercero exclusivamente para una suite reducida de smoke tests o ejecuciones nocturnas. En este punto, la creación y limpieza de datos de prueba (tarjetas, credenciales de comercio) debe estar 100% orquestada.</p>
-  </li>
-  <li>
-    <p>Observabilidad y verificación asíncrona
-Diseñar cómo la automatización validará los eventos de fondo, especialmente los webhooks de confirmación. Si la suite solo evalúa la pantalla final del navegador, los fallos de procesamiento backend pasarán desapercibidos.</p>
-  </li>
-</ol>
-
-<p>La automatización que no aisla sus dependencias externas no aporta calidad, solo crea ruido.</p>
-
-<p>¿Cómo gestionáis en vuestros equipos el testing de flujos críticos dependientes de plataformas de terceros?</p>
-
-<p>#QualityAssurance #SoftwareTesting #TestAutomation #ECommerce #QAStrategy #SoftwareArchitecture</p>
-
-<p><strong>English version</strong></p>
-
-<p>Automating the checkout flow during a payment gateway migration is not a test coding challenge. It is an architecture, contract, and isolation problem.</p>
-
-<p>Running automated tests directly against a third-party sandbox only results in network latency, timeouts, locked test data, and broken pipelines that the team will eventually ignore.</p>
-
-<p>Before writing a single line of code in the framework, four essential steps must be established:</p>
-
-<ol>
-  <li>
-    <p>Contract Testing
-Validate request and response schemas between the ecommerce system and the new provider using tools like Pact. Ensuring JSON structure, data types, and headers match specifications saves dozens of UI-level debugging hours.</p>
-  </li>
-  <li>
-    <p>Mocking and Stubbing for CI/CD
-The regression suite running in CI/CD must be fast and deterministic. Implementing mock servers (such as WireMock or Mountebank) allows simulating successful, declined, or delayed transactions without relying on the external network.</p>
-  </li>
-  <li>
-    <p>Focused End-to-End Scope
-Reserve execution against the provider’s actual sandbox for a lean smoke test suite or nightly runs. At this level, test data management (test credit cards, merchant accounts) must be fully automated and orchestrated.</p>
-  </li>
-  <li>
-    <p>Observability and Asynchronous Event Verification
-Define how automation will assert background events, particularly confirmation webhooks. If the suite only checks the browser UI, critical backend processing failures will be missed.</p>
-  </li>
-</ol>
-
-<p>Automation that fails to isolate external dependencies does not provide quality, it only generates noise.</p>
-
-<p>How does your team handle automated testing for critical flows dependent on third-party services?</p>
-
-<p>#QualityAssurance #SoftwareTesting #TestAutomation #ECommerce #QAStrategy #SoftwareArchitecture</p>
+  <!-- Contenido ES — visible por defecto -->
+  <div class="post-content fade-up" id="postContentEs">
+    
 
   </div>
 
-  <!-- Footer del post: autor -->
+  <!-- Contenido EN — oculto por defecto -->
+  
+
+  <!-- Footer: autor -->
   <footer class="post-footer fade-up">
     <div class="hero-avatar" style="width:56px;height:56px;font-size:1.3rem;">
       AMD
@@ -184,6 +133,134 @@ Define how automation will assert background events, particularly confirmation w
   
 
 </article>
+
+<style>
+/* ── Switch de idioma ───────────────────────── */
+.post-lang-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+  padding: 10px 16px;
+  background: var(--surface);
+  border-radius: 30px;
+  user-select: none;
+}
+
+.post-lang-label {
+  font-family: var(--mono);
+  font-size: .72rem;
+  color: var(--muted);
+  letter-spacing: .06em;
+  min-width: 140px;
+}
+
+.lang-switch-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.lang-switch-track {
+  width: 40px;
+  height: 22px;
+  background: var(--surface);
+  border: 2px solid var(--muted);
+  border-radius: 11px;
+  position: relative;
+  display: block;
+  transition: background .25s, border-color .25s;
+}
+
+.lang-switch-thumb {
+  width: 14px;
+  height: 14px;
+  background: var(--muted);
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: transform .25s, background .25s;
+  display: block;
+}
+
+/* Estado activo (EN) */
+.lang-switch-btn.active .lang-switch-track {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+.lang-switch-btn.active .lang-switch-thumb {
+  transform: translateX(18px);
+  background: white;
+}
+
+.lang-switch-text {
+  font-family: var(--mono);
+  font-size: .75rem;
+  font-weight: 500;
+  color: var(--muted);
+  letter-spacing: .08em;
+  transition: color .2s;
+  width: 18px;
+}
+.lang-switch-btn.active .lang-switch-text {
+  color: var(--accent);
+}
+
+/* Transición suave del contenido */
+.post-content {
+  animation: contentFade .3s ease;
+}
+@keyframes contentFade {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+</style>
+
+<script>
+(function () {
+  var isEN = false;
+
+  window.togglePostLang = function () {
+    isEN = !isEN;
+
+    var esBlock = document.getElementById('postContentEs');
+    var enBlock = document.getElementById('postContentEn');
+    var btn     = document.getElementById('langSwitchBtn');
+    var label   = document.getElementById('langLabel');
+    var btnText = document.getElementById('langSwitchText');
+    var title   = document.getElementById('postTitle');
+    var titleEs = document.getElementById('postTitleEs');
+    var titleEn = document.getElementById('postTitleEn');
+
+    if (isEN) {
+      esBlock.style.display = 'none';
+      enBlock.style.display = 'block';
+      enBlock.style.animation = 'none';
+      enBlock.offsetHeight;
+      enBlock.style.animation = '';
+      btn.classList.add('active');
+      label.textContent = 'English version';
+      btnText.textContent = 'ES';
+      if (title && titleEn) title.textContent = titleEn.textContent;
+    } else {
+      enBlock.style.display = 'none';
+      esBlock.style.display = 'block';
+      esBlock.style.animation = 'none';
+      esBlock.offsetHeight;
+      esBlock.style.animation = '';
+      btn.classList.remove('active');
+      label.textContent = 'Versión en español';
+      btnText.textContent = 'EN';
+      if (title && titleEs) title.textContent = titleEs.textContent;
+    }
+  };
+})();
+</script>
 
   </main>
 

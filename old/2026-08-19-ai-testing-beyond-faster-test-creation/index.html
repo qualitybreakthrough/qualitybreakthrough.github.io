@@ -87,7 +87,10 @@
       </a>
     
 
-    <h1 class="post-title">Aplicación de AI testing en Factorías como motor de aceleración</h1>
+    <h1 class="post-title" id="postTitle">Aplicación de AI testing en Factorías como motor de aceleración</h1>
+
+    <!-- Títulos ocultos para el JS — solo si hay versión EN -->
+    
 
     <div class="post-meta">
       <span>19 Aug 2026</span>
@@ -96,54 +99,22 @@
       
       
     </div>
+
+    <!-- Switch de idioma — solo aparece si el post tiene content_en -->
+    
+
   </header>
 
-  <div class="post-content fade-up">
-    <p>Si utilizas Inteligencia Artificial en tu factoría de software solo para generar casos de prueba a mayor velocidad, estás perdiendo el 80% de su impacto real.</p>
-
-<p>Las factorías tradicionales de Quality Assurance sufren un cuello de botella sistémico: el mantenimiento constante de scripts rotos y la preparación manual de datos complejos. Cuando coordinas equipos distribuidos entre España e India en un entorno retail de alto volumen, acelerar la fase de diseño de pruebas no resuelve el problema estructural. Lo único que logra es saturar la canalización con más trabajo pendiente.</p>
-
-<p>La verdadera aceleración mediante AI testing llega cuando aplicas modelos predictivos y mecanismos de autocuración directamente en la cadena de CI/CD.</p>
-
-<p>El valor transformador en una factoría madura se centra en tres puntos concretos:</p>
-
-<p>Primero, el autorreparado de scripts mediante análisis dinámico del DOM. Reducir la fragilidad de las suites de prueba automatizadas frente a cambios continuos de interfaz disminuye el esfuerzo de mantenimiento manual en casi tres cuartas partes.</p>
-
-<p>Segundo, la predicción de defectos y priorización inteligente. Utilizar algoritmos que analicen el historial de commits y la complejidad del código para ejecutar únicamente las pruebas con mayor probabilidad de fallo reduce los tiempos de retorno en entornos integrados.</p>
-
-<p>Tercero, la generación sintética y provisionamiento automatizado de datos de prueba. Sin datos representativos alineados con la operativa del negocio, la automatización se detiene.</p>
-
-<p>La IA no debe considerarse un sustituto de los analistas de calidad, sino el motor operativo que elimina las tareas repetitivas de bajo valor. Esto permite a los equipos dedicarse al análisis exploratorio, la arquitectura de pruebas y la lógica de negocio compleja.</p>
-
-<p>¿Tu organización está utilizando IA para transformar la arquitectura de QA o simplemente para escribir código de prueba a mayor velocidad?</p>
-
-<p>#SoftwareTesting #QualityAssurance #AITesting #SoftwareFactory #DevOps #TestAutomation</p>
-
-<p><strong>English version</strong></p>
-
-<p>Using Artificial Intelligence in your software factory merely to write test cases faster means missing out on 80% of its real value.</p>
-
-<p>Traditional Quality Assurance factories face a structural bottleneck: continuous maintenance of broken scripts and manual preparation of complex test data. When managing distributed teams across Spain and India within a high-volume retail ecosystem, simply speeding up test design does not fix the underlying issue. It merely clogs the pipeline further downstream.</p>
-
-<p>True acceleration through AI testing occurs when predictive models and self-healing mechanisms are integrated directly into the CI/CD pipeline.</p>
-
-<p>The real transformation for a mature testing factory relies on three key pillars:</p>
-
-<p>First, script self-healing via dynamic DOM analysis. Reducing the brittleness of automated test suites against frequent UI changes lowers manual maintenance efforts by nearly three-quarters.</p>
-
-<p>Second, defect prediction and intelligent test prioritization. Leveraging algorithms to analyze commit history and code complexity allows execution of only the test cases most likely to catch faults, drastically shortening feedback loops.</p>
-
-<p>Third, synthetic test data generation and automated provisioning. Without reliable data matching actual business operations, automation stalls regardless of execution speed.</p>
-
-<p>AI should not be treated as a replacement for QA engineers, but as the operational engine that strips away low-value repetitive tasks. This enables teams to focus on exploratory testing, QA architecture, and complex business logic.</p>
-
-<p>Is your organization leveraging AI to evolve its overall QA strategy, or just to write test scripts at a higher velocity?</p>
-
-<p>#SoftwareTesting #QualityAssurance #AITesting #SoftwareFactory #DevOps #TestAutomation</p>
+  <!-- Contenido ES — visible por defecto -->
+  <div class="post-content fade-up" id="postContentEs">
+    
 
   </div>
 
-  <!-- Footer del post: autor -->
+  <!-- Contenido EN — oculto por defecto -->
+  
+
+  <!-- Footer: autor -->
   <footer class="post-footer fade-up">
     <div class="hero-avatar" style="width:56px;height:56px;font-size:1.3rem;">
       AMD
@@ -162,6 +133,134 @@
   
 
 </article>
+
+<style>
+/* ── Switch de idioma ───────────────────────── */
+.post-lang-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+  padding: 10px 16px;
+  background: var(--surface);
+  border-radius: 30px;
+  user-select: none;
+}
+
+.post-lang-label {
+  font-family: var(--mono);
+  font-size: .72rem;
+  color: var(--muted);
+  letter-spacing: .06em;
+  min-width: 140px;
+}
+
+.lang-switch-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.lang-switch-track {
+  width: 40px;
+  height: 22px;
+  background: var(--surface);
+  border: 2px solid var(--muted);
+  border-radius: 11px;
+  position: relative;
+  display: block;
+  transition: background .25s, border-color .25s;
+}
+
+.lang-switch-thumb {
+  width: 14px;
+  height: 14px;
+  background: var(--muted);
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: transform .25s, background .25s;
+  display: block;
+}
+
+/* Estado activo (EN) */
+.lang-switch-btn.active .lang-switch-track {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+.lang-switch-btn.active .lang-switch-thumb {
+  transform: translateX(18px);
+  background: white;
+}
+
+.lang-switch-text {
+  font-family: var(--mono);
+  font-size: .75rem;
+  font-weight: 500;
+  color: var(--muted);
+  letter-spacing: .08em;
+  transition: color .2s;
+  width: 18px;
+}
+.lang-switch-btn.active .lang-switch-text {
+  color: var(--accent);
+}
+
+/* Transición suave del contenido */
+.post-content {
+  animation: contentFade .3s ease;
+}
+@keyframes contentFade {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+</style>
+
+<script>
+(function () {
+  var isEN = false;
+
+  window.togglePostLang = function () {
+    isEN = !isEN;
+
+    var esBlock = document.getElementById('postContentEs');
+    var enBlock = document.getElementById('postContentEn');
+    var btn     = document.getElementById('langSwitchBtn');
+    var label   = document.getElementById('langLabel');
+    var btnText = document.getElementById('langSwitchText');
+    var title   = document.getElementById('postTitle');
+    var titleEs = document.getElementById('postTitleEs');
+    var titleEn = document.getElementById('postTitleEn');
+
+    if (isEN) {
+      esBlock.style.display = 'none';
+      enBlock.style.display = 'block';
+      enBlock.style.animation = 'none';
+      enBlock.offsetHeight;
+      enBlock.style.animation = '';
+      btn.classList.add('active');
+      label.textContent = 'English version';
+      btnText.textContent = 'ES';
+      if (title && titleEn) title.textContent = titleEn.textContent;
+    } else {
+      enBlock.style.display = 'none';
+      esBlock.style.display = 'block';
+      esBlock.style.animation = 'none';
+      esBlock.offsetHeight;
+      esBlock.style.animation = '';
+      btn.classList.remove('active');
+      label.textContent = 'Versión en español';
+      btnText.textContent = 'EN';
+      if (title && titleEs) title.textContent = titleEs.textContent;
+    }
+  };
+})();
+</script>
 
   </main>
 
