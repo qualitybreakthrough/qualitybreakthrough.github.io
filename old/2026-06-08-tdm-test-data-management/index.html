@@ -167,6 +167,28 @@
 </article>
 
 <style>
+/* ── Linkedin ───────────────────────── */
+.post-linkedin-cta {
+  margin-top: 48px;
+  padding: 28px 32px;
+  background: var(--surface);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.post-linkedin-cta p {
+  font-family: var(--mono);
+  font-size: .85rem;
+  color: var(--muted);
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+  .post-linkedin-cta { flex-direction: column; text-align: center; }
+}
 /* ── Switch de idioma ───────────────────────── */
 .post-lang-switch {
   display: inline-flex;
