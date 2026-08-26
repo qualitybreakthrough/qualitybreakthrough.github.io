@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>
-    Trabajo previo para diseñar la estrategia de automatización de una funcionalidad core con dependencias de terceros — Quality Breakthrough
+    La calidad no es eliminar riesgos, es decidir cuáles vas a comprar — Quality Breakthrough
   </title>
-  <meta name="description" content="Migrar la pasarela de pago de un ecommerce no es un reto de código de test, es un problema de arquitectura, contratos y aislamiento de dependencias.">
+  <meta name="description" content="Una estrategia de calidad madura no intenta erradicar todos los errores, sino gestionar y aceptar riesgos de manera consciente según el impacto de negocio.">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,22 +18,22 @@
 
   <!-- SEO -->
   <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Trabajo previo para diseñar la estrategia de automatización de una funcionalidad core con dependencias de terceros | Quality Breakthrough</title>
+<title>La calidad no es eliminar riesgos, es decidir cuáles vas a comprar | Quality Breakthrough</title>
 <meta name="generator" content="Jekyll v3.10.0" />
-<meta property="og:title" content="Trabajo previo para diseñar la estrategia de automatización de una funcionalidad core con dependencias de terceros" />
+<meta property="og:title" content="La calidad no es eliminar riesgos, es decidir cuáles vas a comprar" />
 <meta name="author" content="Antonio Montero" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Migrar la pasarela de pago de un ecommerce no es un reto de código de test, es un problema de arquitectura, contratos y aislamiento de dependencias." />
-<meta property="og:description" content="Migrar la pasarela de pago de un ecommerce no es un reto de código de test, es un problema de arquitectura, contratos y aislamiento de dependencias." />
-<link rel="canonical" href="https://tuusuario.github.io/old/2026-08-21-qa-automation-strategy/" />
-<meta property="og:url" content="https://tuusuario.github.io/old/2026-08-21-qa-automation-strategy/" />
+<meta name="description" content="Una estrategia de calidad madura no intenta erradicar todos los errores, sino gestionar y aceptar riesgos de manera consciente según el impacto de negocio." />
+<meta property="og:description" content="Una estrategia de calidad madura no intenta erradicar todos los errores, sino gestionar y aceptar riesgos de manera consciente según el impacto de negocio." />
+<link rel="canonical" href="https://tuusuario.github.io/qa-strategy/opinion/2026/08/26/calidad-como-gestion-riesgos/" />
+<meta property="og:url" content="https://tuusuario.github.io/qa-strategy/opinion/2026/08/26/calidad-como-gestion-riesgos/" />
 <meta property="og:site_name" content="Quality Breakthrough" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2026-08-21T00:00:00+00:00" />
+<meta property="article:published_time" content="2026-08-26T00:00:00+00:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Trabajo previo para diseñar la estrategia de automatización de una funcionalidad core con dependencias de terceros" />
+<meta property="twitter:title" content="La calidad no es eliminar riesgos, es decidir cuáles vas a comprar" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Antonio Montero"},"dateModified":"2026-08-21T00:00:00+00:00","datePublished":"2026-08-21T00:00:00+00:00","description":"Migrar la pasarela de pago de un ecommerce no es un reto de código de test, es un problema de arquitectura, contratos y aislamiento de dependencias.","headline":"Trabajo previo para diseñar la estrategia de automatización de una funcionalidad core con dependencias de terceros","mainEntityOfPage":{"@type":"WebPage","@id":"https://tuusuario.github.io/old/2026-08-21-qa-automation-strategy/"},"url":"https://tuusuario.github.io/old/2026-08-21-qa-automation-strategy/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Antonio Montero"},"dateModified":"2026-08-26T00:00:00+00:00","datePublished":"2026-08-26T00:00:00+00:00","description":"Una estrategia de calidad madura no intenta erradicar todos los errores, sino gestionar y aceptar riesgos de manera consciente según el impacto de negocio.","headline":"La calidad no es eliminar riesgos, es decidir cuáles vas a comprar","mainEntityOfPage":{"@type":"WebPage","@id":"https://tuusuario.github.io/qa-strategy/opinion/2026/08/26/calidad-como-gestion-riesgos/"},"url":"https://tuusuario.github.io/qa-strategy/opinion/2026/08/26/calidad-como-gestion-riesgos/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -87,13 +87,16 @@
       </a>
     
 
-    <h1 class="post-title" id="postTitle">Trabajo previo para diseñar la estrategia de automatización de una funcionalidad core con dependencias de terceros</h1>
+    <h1 class="post-title" id="postTitle">La calidad no es eliminar riesgos, es decidir cuáles vas a comprar</h1>
 
     <!-- Títulos ocultos para el JS — solo si hay versión EN -->
     
+      <span id="postTitleEs" style="display:none;">La calidad no es eliminar riesgos, es decidir cuáles vas a comprar</span>
+      <span id="postTitleEn" style="display:none;">Quality is not eliminating risk, it is deciding which risks to buy</span>
+    
 
     <div class="post-meta">
-      <span>21 Aug 2026</span>
+      <span>26 Aug 2026</span>
       
         <span>⏱ 4 min de lectura</span>
       
@@ -102,18 +105,70 @@
 
     <!-- Switch de idioma — solo aparece si el post tiene content_en -->
     
+    <div class="post-lang-switch">
+      <span class="post-lang-label" id="langLabel">Versión en español</span>
+      <button class="lang-switch-btn" id="langSwitchBtn" onclick="togglePostLang()">
+        <span class="lang-switch-track">
+          <span class="lang-switch-thumb"></span>
+        </span>
+        <span class="lang-switch-text" id="langSwitchText">EN</span>
+      </button>
+    </div>
+    
 
   </header>
 
   <!-- Contenido ES — visible por defecto -->
   <div class="post-content fade-up" id="postContentEs">
-    
+    <p>La obsesión por la cobertura total de testing es una trampa de inmadurez organizacional.
+Seguir creyendo que una buena estrategia de testing equivale a una buena estrategia de calidad es un error estratégico grave.</p>
+
+<p>Existe una creencia muy instalada en el sector: si ejecutamos miles de tests y automatizamos cada esquina del código, el software será impecable. Es mentira. La calidad nunca ha tratado de eliminar el riesgo, porque el riesgo cero no existe y perseguirlo destruye la velocidad de la empresa. La calidad consiste en decidir de forma consciente qué riesgos estamos dispuestos a asumir y cuáles no.</p>
+
+<p>Una organización inmadura busca obsesivamente erradicar los bugs del sistema. Una organización madura aplica una gestión de calidad basada en riesgo (risk-based management) y decide exactamente qué problemas está dispuesta a comprar a cambio de rapidez o de menor coste.</p>
+
+<p>En un entorno de retail a gran escala, no todas las funcionalidades valen lo mismo. Si el checkout cae durante el Black Friday, la empresa pierde millones. Si el filtro de color en la lista de búsqueda de productos falla durante 10 minutos en una landing secundaria, el impacto comercial es residual. Tratar ambos escenarios con el mismo rigor de pruebas es una pésima gestión de recursos.</p>
+
+<p>El verdadero rol del liderazgo en Quality Assurance no es actuar como un policía que bloquea despliegues hasta la perfección absoluta. El trabajo real consiste en sentarse con negocio, producto y tecnología para trazar el mapa de tolerancia al riesgo. Definir qué partes de la arquitectura requieren la máxima cobertura posible e integración continua estricta, y en cuáles aceptamos que el usuario final sea el primer sensor si eso nos permite salir a mercado semanas antes.</p>
+
+<p>Gestionar el riesgo requiere madurez política y técnica. Significa dejar de esconderse detrás de métricas de cobertura del 100% que solo aportan una falsa sensación de seguridad. Significa aceptar que habrá bugs en producción, pero que serán bugs controlados, conocidos y asumidos por toda la organización.</p>
+
+<p>¿En tu empresa se debate conscientemente la tolerancia al riesgo antes de cada lanzamiento, o se sigue exigiendo un testing a ciegas con la ilusión de alcanzar la perfección?</p>
+
+<p>#QAStrategy #SoftwareTesting #RiskManagement #QualityAssurance #TechLeadership</p>
 
   </div>
 
   <!-- Contenido EN — oculto por defecto -->
   
+  <div class="post-content fade-up" id="postContentEn" style="display:none;">
+    <p>The obsession with total test coverage is an organizational immaturity trap.
+Continuing to believe that a good testing strategy equals a good quality strategy is a serious strategic mistake.</p>
 
+<p>There is a deeply rooted belief in the industry: if we execute thousands of tests and automate every corner of the code, the software will be flawless. That is a lie. Quality has never been about eliminating risk, because zero risk does not exist, and chasing it destroys business velocity. Quality consists of consciously deciding which risks we are willing to accept and which ones we are not.</p>
+
+<p>An immature organization obsessively seeks to eradicate bugs from the system. A mature organization applies risk-based quality management and decides exactly which problems it is willing to buy in exchange for speed or lower costs.</p>
+
+<p>In a large-scale retail environment, not all features are created equal. If the checkout goes down during Black Friday, the company loses millions. If the color filter on a secondary product listing page fails for 10 minutes, the business impact is residual. Treating both scenarios with the same testing rigor is terrible resource management.</p>
+
+<p>The true role of Quality Assurance leadership is not to act as a gatekeeper blocking deployments until absolute perfection is achieved. The real job is sitting down with business, product, and tech teams to map out risk tolerance. Defining which parts of the architecture require maximum coverage and strict continuous integration, and where we accept that the end user might be the first sensor if that allows us to hit the market weeks earlier.</p>
+
+<p>Managing risk requires technical and organizational maturity. It means stopping hiding behind 100% coverage metrics that only offer a false sense of security. It means accepting that there will be bugs in production, but they will be controlled, known bugs accepted by the entire organization.</p>
+
+<p>Does your company consciously discuss risk tolerance before every release, or do you still demand blind testing under the illusion of reaching perfection?</p>
+
+<p>#QAStrategy #SoftwareTesting #RiskManagement #QualityAssurance #TechLeadership</p>
+
+  </div>
+  
+
+  
+  <div class="post-linkedin-cta">
+    <p>💬 ¿Qué opinas? Continúa la conversación en LinkedIn</p>
+    <a href="https://www.linkedin.com/posts/antoniomontero-dorado_" target="_blank" rel="noopener" class="btn-primary">
+      Ver el debate →
+    </a>
+  </div>
   
 
   <!-- Footer: autor -->
@@ -136,29 +191,6 @@
   <section style="margin-top:64px;">
     <div class="section-label" style="margin-bottom:24px;">✦ También te puede interesar</div>
     <div class="articles-grid" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr));">
-      
-        
-
-
-<a href="/qa-strategy/opinion/2026/08/26/calidad-como-gestion-riesgos/" class="article-card fade-up">
-  <div class="article-thumb thumb-qa-strategy">
-    <span>🧪</span>
-    <span class="article-cat">QA STRATEGY</span>
-  </div>
-  <div class="article-body">
-    <div class="article-meta">
-      26 Aug 2026
-       · QA STRATEGY
-    </div>
-    <h3 class="article-title">La calidad no es eliminar riesgos, es decidir cuáles vas a comprar</h3>
-    <p class="article-excerpt">Una estrategia de calidad madura no intenta erradicar todos los errores, sino gestionar y aceptar riesgos de manera consciente ...</p>
-    <div class="article-footer">
-      <span class="read-time">⏱ 4 min</span>
-      <span class="read-link">Leer →</span>
-    </div>
-  </div>
-</a>
-
       
         
 
