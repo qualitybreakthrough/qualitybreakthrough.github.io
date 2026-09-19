@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+    La Radiografía del ROI en Automatización de Pruebas: Perspectiva de un QA Manager — Quality Breakthrough
+  </title>
+  <meta name="description" content="Como QA Manager, la automatización es una decisión de ingeniería y gestión de riesgos. Descubre cómo calcular el ROI real, qué criterios aplicar y por qué el...">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/assets/css/style.css">
+
+  <!-- SEO -->
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>La Radiografía del ROI en Automatización de Pruebas: Perspectiva de un QA Manager | Quality Breakthrough</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="La Radiografía del ROI en Automatización de Pruebas: Perspectiva de un QA Manager" />
+<meta name="author" content="Antonio Montero" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Como QA Manager, la automatización es una decisión de ingeniería y gestión de riesgos. Descubre cómo calcular el ROI real, qué criterios aplicar y por qué el 100% de automatización es un antipatrón." />
+<meta property="og:description" content="Como QA Manager, la automatización es una decisión de ingeniería y gestión de riesgos. Descubre cómo calcular el ROI real, qué criterios aplicar y por qué el 100% de automatización es un antipatrón." />
+<link rel="canonical" href="https://tuusuario.github.io/qa-strategy/liderazgo/automatizacion/2026/09/19/roi-automatization/" />
+<meta property="og:url" content="https://tuusuario.github.io/qa-strategy/liderazgo/automatizacion/2026/09/19/roi-automatization/" />
+<meta property="og:site_name" content="Quality Breakthrough" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-09-19T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="La Radiografía del ROI en Automatización de Pruebas: Perspectiva de un QA Manager" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Antonio Montero"},"dateModified":"2026-09-19T00:00:00+00:00","datePublished":"2026-09-19T00:00:00+00:00","description":"Como QA Manager, la automatización es una decisión de ingeniería y gestión de riesgos. Descubre cómo calcular el ROI real, qué criterios aplicar y por qué el 100% de automatización es un antipatrón.","headline":"La Radiografía del ROI en Automatización de Pruebas: Perspectiva de un QA Manager","mainEntityOfPage":{"@type":"WebPage","@id":"https://tuusuario.github.io/qa-strategy/liderazgo/automatizacion/2026/09/19/roi-automatization/"},"url":"https://tuusuario.github.io/qa-strategy/liderazgo/automatizacion/2026/09/19/roi-automatization/"}</script>
+<!-- End Jekyll SEO tag -->
+
+  
+  <!-- Google Analytics -->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RJVR0GV4HP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-RJVR0GV4HP');
+</script>
+
+
+</head>
+<body>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-close" onclick="toggleMenu()">✕</button>
+    <a href="/">Inicio</a>
+    <a href="/articulos/">Artículos</a>
+    <a href="/categorias/">Categorías</a>
+    <a href="/sobre-mi/">Sobre mí</a>
+  </div>
+
+  <!-- Nav -->
+  <nav class="site-nav">
+    <a href="/" class="nav-logo">
+      Quality <em>Breakthrough</em>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/">Inicio</a></li>
+      <li><a href="/articulos/">Artículos</a></li>
+      <li><a href="/categorias/">Categorías</a></li>
+      <li><a href="/sobre-mi/">Sobre mí</a></li>
+    </ul>
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Contenido principal -->
+  <main>
+    <article class="post-wrapper">
+
+  <header class="post-header fade-up">
+    
+      <a href="/categorias/qa-strategy" class="post-category-tag">
+        QA STRATEGY
+      </a>
+    
+
+    <h1 class="post-title" id="postTitle">La Radiografía del ROI en Automatización de Pruebas: Perspectiva de un QA Manager</h1>
+
+    <!-- Títulos ocultos para el JS — solo si hay versión EN -->
+    
+      <span id="postTitleEs" style="display:none;">La Radiografía del ROI en Automatización de Pruebas: Perspectiva de un QA Manager</span>
+      <span id="postTitleEn" style="display:none;">The Anatomy of Automation ROI: A QA Manager's Perspective</span>
+    
+
+    <div class="post-meta">
+      <span>19 Sep 2026</span>
+      
+        <span>⏱ 5 min de lectura</span>
+      
+      
+    </div>
+
+    <!-- Switch de idioma — solo aparece si el post tiene content_en -->
+    
+    <div class="post-lang-switch">
+      <span class="post-lang-label" id="langLabel">Versión en español</span>
+      <button class="lang-switch-btn" id="langSwitchBtn" onclick="togglePostLang()">
+        <span class="lang-switch-track">
+          <span class="lang-switch-thumb"></span>
+        </span>
+        <span class="lang-switch-text" id="langSwitchText">EN</span>
+      </button>
+    </div>
+    
+
+  </header>
+
+  <!-- Contenido ES — visible por defecto -->
+  <div class="post-content fade-up" id="postContentEs">
+    <p>Como QA Manager, el enfoque cambia: la automatización ya no es un debate contable, sino una decisión de ingeniería, eficiencia y gestión de riesgos. Mi objetivo no es tener el mayor número de scripts creados, sino construir una red de seguridad que acelere los pases a producción sin asfixiar al equipo con el mantenimiento.</p>
+
+<p>Aquí tienes la radiografía de cómo gestionamos el ROI de la automatización desde la dirección de QA:</p>
+
+<h3 id="1-principios-que-aplican-el-mindset-del-qa-manager">1. Principios que aplican (El Mindset del QA Manager)</h3>
+<ul>
+  <li><strong>La automatización es desarrollo de software:</strong> Los scripts requieren arquitectura, control de versiones, revisión de código y buenas prácticas (SOLID, DRY). Si se programa rápido y mal, se paga en la próxima release.</li>
+  <li><strong>Mantenibilidad por encima de Cobertura:</strong> Prefiero una suite de 50 tests estables en los que el equipo confíe ciegamente, que una suite de 500 tests donde 40 fallan por problemas de sincronización (<em>flaky tests</em>).</li>
+  <li><strong>El testing manual no desaparece, evoluciona:</strong> Automatizamos para que las máquinas hagan lo repetitivo, liberando a los QA para hacer pruebas exploratorias, de usabilidad y de casos límite complejos.</li>
+</ul>
+
+<h3 id="2-criterios-claros-de-automatización-qué-sí-automatizar">2. Criterios claros de automatización (Qué SÍ automatizar)</h3>
+<p>No se automatiza por inercia. Un caso de prueba debe cumplir estos requisitos para entrar en el backlog de automatización:</p>
+<ul>
+  <li><strong>Alta frecuencia de ejecución:</strong> Es parte del <em>Smoke Test</em> o la Regresión básica (se ejecuta en cada Pull Request o Release).</li>
+  <li><strong>Estabilidad de la funcionalidad:</strong> La <em>feature</em> lleva al menos 2-3 sprints en producción y su flujo principal no está sujeto a rediseños constantes.</li>
+  <li><strong>Criticidad de negocio (P0/P1):</strong> Flujos <em>core</em> donde un fallo detiene el negocio (ej. Login, Checkout, Pasarela de pago).</li>
+  <li><strong>Complejidad de datos (Data-Driven):</strong> Pruebas que requieren introducir 50 combinaciones de datos diferentes. Una máquina lo hace en segundos; un humano cometería errores y tardaría horas.</li>
+</ul>
+
+<h3 id="3-cuándo-un-test-es-rentable-el-punto-de-equilibrio">3. Cuándo un test es rentable (El punto de equilibrio)</h3>
+<p>El ROI en automatización es negativo el día 1. Un test es rentable (genera ROI positivo) cuando alcanza su <strong>Punto de Equilibrio (Break-Even Point)</strong>.</p>
+<ul>
+  <li><strong>La fórmula simplificada:</strong> <code class="language-plaintext highlighter-rouge">Coste de Creación + (Coste de Mantenimiento × Nº Ejecuciones) &lt; (Coste Ejecución Manual × Nº Ejecuciones)</code></li>
+  <li><strong>En la práctica:</strong> Un test de UI automatizado suele necesitar ejecutarse sin romperse entre 15 y 20 veces para empezar a ser rentable. Si se rompe en la ejecución 5 por un cambio en el front-end y hay que reescribirlo, ese test nos ha hecho perder dinero y tiempo.</li>
+</ul>
+
+<h3 id="4-cuándo-un-test-se-convierte-en-capex-un-activo-real-de-qa">4. Cuándo un test se convierte en “Capex” (Un activo real de QA)</h3>
+<p>Llevando el término financiero al terreno técnico, un test es un activo real (y no deuda técnica u Opex) cuando:</p>
+<ul>
+  <li><strong>Es agnóstico a la interfaz:</strong> Está construido mediante patrones como Page Object Model (POM) o Screenplay, de modo que si cambia un botón, solo actualizas un localizador en un archivo, no en 50 scripts.</li>
+  <li><strong>Habilita el CI/CD:</strong> Se ejecuta en la pipeline de despliegue de forma desatendida, es rápido, no requiere preparación manual de datos y frena un pase a producción si hay un bug real.</li>
+  <li><strong>Genera confianza total:</strong> Si el test se pone en rojo, el desarrollador busca un error en su código, no un error en el test.</li>
+</ul>
+
+<h3 id="5-métricas-y-kpis-para-medir-el-roi-de-automatización">5. Métricas y KPIs para medir el ROI de automatización</h3>
+<p>No medimos “número de tests automatizados” (eso es una métrica de vanidad). Medimos:</p>
+<ul>
+  <li><strong>Lead Time de Regresión:</strong> ¿Cuánto hemos reducido el tiempo desde que el código está listo hasta que se certifica para producción? (Ej. de 3 días manuales a 2 horas automatizadas).</li>
+  <li><strong>Tasa de Flakiness (Falsos Positivos):</strong> Porcentaje de tests que fallan por problemas del entorno o del script, no por bugs reales. (Debe ser menor al 3-5%).</li>
+  <li><strong>Esfuerzo de Mantenimiento:</strong> ¿Qué porcentaje del tiempo del sprint dedica el equipo de automatización a arreglar tests rotos vs. crear nuevos? (Si supera el 30%, hay un problema grave de arquitectura o estrategia).</li>
+  <li><strong>Defectos Escapados (Defect Leakage):</strong> ¿Cuántos bugs críticos han llegado a producción en flujos que supuestamente estaban cubiertos por la automatización?</li>
+</ul>
+
+<h3 id="6-estrategia-para-seleccionar-casos-en-un-plan-de-pruebas">6. Estrategia para seleccionar casos en un Plan de Pruebas</h3>
+<p>Aplicamos la combinación de Testing Basado en Riesgos (<em>Risk-Based Testing</em>) y la Pirámide de Automatización (Mike Cohn):</p>
+<ul>
+  <li><strong>Base (Unitario y de Componente):</strong> Automatizar todo lo posible a nivel de código (responsabilidad de los desarrolladores).</li>
+  <li><strong>Medio (API / Integración):</strong> Aquí centramos el esfuerzo de QA. Son rápidos de ejecutar, menos frágiles que la UI y validan la lógica de negocio real. Si podemos validar el motor de precios por API, no lo hacemos a través de la web.</li>
+  <li><strong>Cúspide (UI / E2E):</strong> Seleccionamos con pinzas. Solo los flujos completos críticos (<em>Happy paths</em> de negocio). Nada de casos límite visuales ni flujos alternativos raros.</li>
+</ul>
+
+<h3 id="7-qué-porcentaje-del-plan-de-pruebas-se-debe-automatizar-como-máximo">7. ¿Qué porcentaje del plan de pruebas se debe automatizar como máximo?</h3>
+<p>El 100% es un antipatrón, una trampa y un derroche de recursos.</p>
+<ul>
+  <li><strong>Del Plan de Pruebas Total:</strong> Como máximo se debe aspirar a automatizar en torno al <strong>30% - 40%</strong>. El resto debe quedar para pruebas exploratorias, validación de UX/UI, pruebas de accesibilidad, pruebas de dispositivos físicos y casos borde que no compensa programar.</li>
+  <li><strong>De la Suite de Regresión:</strong> Dentro del subconjunto de pruebas repetitivas, un objetivo maduro y excelente es el <strong>70% - 80%</strong>.</li>
+</ul>
+
+<p>El 20% restante de la regresión siempre será más barato, rápido y sensato hacerlo manualmente (ej. validar que un PDF se genera con el formato visual correcto o validaciones que requieren un factor humano/cognitivo). Como Manager, mi labor es saber dónde parar.</p>
+
+  </div>
+
+  <!-- Contenido EN — oculto por defecto -->
+  
+  <div class="post-content fade-up" id="postContentEn" style="display:none;">
+    <p>As a QA Manager, the perspective shifts: automation is no longer a balance sheet debate, but an engineering, efficiency, and risk management decision. My goal is not to have the highest number of scripts created, but to build a safety net that accelerates releases to production without suffocating the team with maintenance.</p>
+
+<p>Here is the detailed overview of how we manage automation ROI from QA leadership:</p>
+
+<h3 id="1-core-principles-the-qa-manager-mindset">1. Core Principles (The QA Manager Mindset)</h3>
+<ul>
+  <li><strong>Automation is software development:</strong> Scripts require architecture, version control, code review, and best practices (SOLID, DRY). Quick and dirty code is paid for in the next release.</li>
+  <li><strong>Maintainability over Coverage:</strong> I prefer a suite of 50 stable tests that the team trusts blindly over a suite of 500 tests where 40 fail due to synchronization issues (flaky tests).</li>
+  <li><strong>Manual testing doesn’t disappear, it evolves:</strong> We automate so machines handle repetitive tasks, freeing QA engineers to conduct exploratory, usability, and complex edge-case testing.</li>
+</ul>
+
+<h3 id="2-clear-automation-criteria-what-to-automate">2. Clear Automation Criteria (What to Automate)</h3>
+<p>We don’t automate out of inertia. A test case must meet these requirements to enter the automation backlog:</p>
+<ul>
+  <li><strong>High execution frequency:</strong> Part of the Smoke Test or basic Regression (executed on every Pull Request or Release).</li>
+  <li><strong>Feature stability:</strong> The feature has been in production for at least 2-3 sprints and its primary flow is not subject to constant redesigns.</li>
+  <li><strong>Business criticality (P0/P1):</strong> Core flows where a failure halts the business (e.g., Login, Checkout, Payment Gateway).</li>
+  <li><strong>Data complexity (Data-Driven):</strong> Tests requiring 50 different data combinations. A machine does it in seconds; a human would make errors and take hours.</li>
+</ul>
+
+<h3 id="3-when-a-test-becomes-profitable-break-even-point">3. When a Test Becomes Profitable (Break-Even Point)</h3>
+<p>Automation ROI is negative on Day 1. A test becomes profitable (generates positive ROI) when it reaches its Break-Even Point.</p>
+<ul>
+  <li><strong>Simplified formula:</strong> <code class="language-plaintext highlighter-rouge">Creation Cost + (Maintenance Cost × Executions) &lt; (Manual Execution Cost × Executions)</code></li>
+  <li><strong>In practice:</strong> An automated UI test usually needs to run without breaking between 15 and 20 times to start being profitable. If it breaks on run 5 due to a front-end change and must be rewritten, that test has wasted time and money.</li>
+</ul>
+
+<h3 id="4-when-a-test-becomes-capex-a-real-qa-asset">4. When a Test Becomes “Capex” (A Real QA Asset)</h3>
+<p>Applying financial terms to software engineering, a test is a real asset (and not technical debt or Opex) when:</p>
+<ul>
+  <li><strong>It is interface-agnostic:</strong> Built using patterns like Page Object Model (POM) or Screenplay, so if a button changes, you update a single locator in one file, not across 50 scripts.</li>
+  <li><strong>It enables CI/CD:</strong> Runs unattended in the deployment pipeline, is fast, requires no manual data prep, and halts a release when a real bug occurs.</li>
+  <li><strong>It generates complete confidence:</strong> If the test turns red, the developer searches for a bug in their code, not a flaw in the test script.</li>
+</ul>
+
+<h3 id="5-metrics--kpis-to-measure-automation-roi">5. Metrics &amp; KPIs to Measure Automation ROI</h3>
+<p>We do not measure “number of automated tests” (that is a vanity metric). We measure real value:</p>
+<ul>
+  <li><strong>Regression Lead Time:</strong> How much time was reduced from code completion to production certification? (e.g., from 3 manual days to 2 automated hours).</li>
+  <li><strong>Flakiness Rate (False Positives):</strong> Percentage of tests failing due to environment or script issues rather than real bugs (must be under 3-5%).</li>
+  <li><strong>Maintenance Effort:</strong> Percentage of sprint time spent fixing broken tests vs. creating new ones (if above 30%, there is a major architectural or strategic issue).</li>
+  <li><strong>Defect Leakage:</strong> How many critical bugs reached production in flows supposed to be covered by automation?</li>
+</ul>
+
+<h3 id="6-test-case-selection-strategy">6. Test Case Selection Strategy</h3>
+<p>We combine Risk-Based Testing with the Automation Pyramid (Mike Cohn):</p>
+<ul>
+  <li><strong>Base (Unit &amp; Component):</strong> Automate as much as possible at the code level (developer responsibility).</li>
+  <li><strong>Middle (API / Integration):</strong> QA’s core focus. Fast, less fragile than UI, and validates real business logic.</li>
+  <li><strong>Top (UI / E2E):</strong> Cherry-picked. Only complete, critical business happy paths.</li>
+</ul>
+
+<h3 id="7-maximum-automation-limits">7. Maximum Automation Limits</h3>
+<p>100% automation is an anti-pattern, a trap, and a waste of resources.</p>
+<ul>
+  <li><strong>Overall Test Plan:</strong> Aim for <strong>30% - 40%</strong> maximum. The rest is reserved for exploratory, UX/UI, accessibility, and edge cases.</li>
+  <li><strong>Regression Suite:</strong> Aim for <strong>70% - 80%</strong> maximum.</li>
+</ul>
+
+<p>The remaining 20% of regression will always be cheaper, faster, and smarter to execute manually. As a Manager, my job is knowing where to stop.</p>
+
+  </div>
+  
+
+  
+  <div class="post-linkedin-cta">
+    <p>💬 ¿Qué opinas? Continúa la conversación en LinkedIn</p>
+    <a href="https://www.linkedin.com/posts/antoniomontero-dorado_" target="_blank" rel="noopener" class="btn-primary">
+      Ver el debate →
+    </a>
+  </div>
+  
+
+  <!-- Footer: autor -->
+  <footer class="post-footer fade-up">
+    <div class="hero-avatar" style="width:56px;height:56px;font-size:1.3rem;">
+      AMD
+    </div>
+    <div>
+      <strong style="display:block;font-family:var(--serif);font-size:1rem;">
+        Antonio Montero
+      </strong>
+      <span style="font-size:.82rem;color:var(--muted);">Head of QA · Carrefour Spain</span>
+    </div>
+  </footer>
+
+  <!-- Artículos relacionados -->
+  
+  
+  
+  <section style="margin-top:64px;">
+    <div class="section-label" style="margin-bottom:24px;">✦ También te puede interesar</div>
+    <div class="articles-grid" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr));">
+      
+        
+
+
+<a href="/qa-strategy/opinion/2026/08/26/calidad-como-gestion-riesgos/" class="article-card fade-up">
+  <div class="article-thumb thumb-qa-strategy">
+    <span>⚠️</span>
+    <span class="article-cat">QA STRATEGY</span>
+  </div>
+  <div class="article-body">
+    <div class="article-meta">
+      26 Aug 2026
+       · QA STRATEGY
+    </div>
+    <h3 class="article-title">La calidad no es eliminar riesgos, es decidir cuáles vas a comprar</h3>
+    <p class="article-excerpt">Una estrategia de calidad madura no intenta erradicar todos los errores, sino gestionar y aceptar riesgos de manera consciente ...</p>
+    <div class="article-footer">
+      <span class="read-time">⏱ 4 min</span>
+      <span class="read-link">Leer →</span>
+    </div>
+  </div>
+</a>
+
+      
+        
+
+
+<a href="/qa-strategy/metricas/2026/08/25/mito-roi-automatizacion/" class="article-card fade-up">
+  <div class="article-thumb thumb-qa-strategy">
+    <span>📊</span>
+    <span class="article-cat">QA STRATEGY</span>
+  </div>
+  <div class="article-body">
+    <div class="article-meta">
+      25 Aug 2026
+       · QA STRATEGY
+    </div>
+    <h3 class="article-title">El mito del ROI en automatizacion: el principio de sustitucion que destruye valor</h3>
+    <p class="article-excerpt">Nos han vendido que automatizar ahorra tiempo de regresión, pero la contabilidad financiera demuestra lo contrario cuando ignor...</p>
+    <div class="article-footer">
+      <span class="read-time">⏱ 3 min</span>
+      <span class="read-link">Leer →</span>
+    </div>
+  </div>
+</a>
+
+      
+    </div>
+  </section>
+  
+
+</article>
+
+<style>
+/* ── Linkedin ───────────────────────── */
+.post-linkedin-cta {
+  margin-top: 48px;
+  padding: 28px 32px;
+  background: var(--surface);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.post-linkedin-cta p {
+  font-family: var(--mono);
+  font-size: .85rem;
+  color: var(--muted);
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+  .post-linkedin-cta { flex-direction: column; text-align: center; }
+}
+/* ── Switch de idioma ───────────────────────── */
+.post-lang-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+  padding: 10px 16px;
+  background: var(--surface);
+  border-radius: 30px;
+  user-select: none;
+}
+
+.post-lang-label {
+  font-family: var(--mono);
+  font-size: .72rem;
+  color: var(--muted);
+  letter-spacing: .06em;
+  min-width: 140px;
+}
+
+.lang-switch-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.lang-switch-track {
+  width: 40px;
+  height: 22px;
+  background: var(--surface);
+  border: 2px solid var(--muted);
+  border-radius: 11px;
+  position: relative;
+  display: block;
+  transition: background .25s, border-color .25s;
+}
+
+.lang-switch-thumb {
+  width: 14px;
+  height: 14px;
+  background: var(--muted);
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: transform .25s, background .25s;
+  display: block;
+}
+
+/* Estado activo (EN) */
+.lang-switch-btn.active .lang-switch-track {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+.lang-switch-btn.active .lang-switch-thumb {
+  transform: translateX(18px);
+  background: white;
+}
+
+.lang-switch-text {
+  font-family: var(--mono);
+  font-size: .75rem;
+  font-weight: 500;
+  color: var(--muted);
+  letter-spacing: .08em;
+  transition: color .2s;
+  width: 18px;
+}
+.lang-switch-btn.active .lang-switch-text {
+  color: var(--accent);
+}
+
+/* Transición suave del contenido */
+.post-content {
+  animation: contentFade .3s ease;
+}
+@keyframes contentFade {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+</style>
+
+<script>
+(function () {
+  var isEN = false;
+
+  window.togglePostLang = function () {
+    isEN = !isEN;
+
+    var esBlock = document.getElementById('postContentEs');
+    var enBlock = document.getElementById('postContentEn');
+    var btn     = document.getElementById('langSwitchBtn');
+    var label   = document.getElementById('langLabel');
+    var btnText = document.getElementById('langSwitchText');
+    var title   = document.getElementById('postTitle');
+    var titleEs = document.getElementById('postTitleEs');
+    var titleEn = document.getElementById('postTitleEn');
+
+    if (isEN) {
+      esBlock.style.display = 'none';
+      enBlock.style.display = 'block';
+      enBlock.style.animation = 'none';
+      enBlock.offsetHeight;
+      enBlock.style.animation = '';
+      btn.classList.add('active');
+      label.textContent = 'English version';
+      btnText.textContent = 'ES';
+      if (title && titleEn) title.textContent = titleEn.textContent;
+    } else {
+      enBlock.style.display = 'none';
+      esBlock.style.display = 'block';
+      esBlock.style.animation = 'none';
+      esBlock.offsetHeight;
+      esBlock.style.animation = '';
+      btn.classList.remove('active');
+      label.textContent = 'Versión en español';
+      btnText.textContent = 'EN';
+      if (title && titleEs) title.textContent = titleEs.textContent;
+    }
+  };
+})();
+</script>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>
+      © 2026 Quality Breakthrough ·
+      Escrito desde Madrid con ☕ ·
+      <a href="https://linkedin.com/in/antoniomontero-dorado" target="_blank" rel="noopener">LinkedIn</a> ·
+      <a href="/feed.xml">RSS</a>
+    </p>
+  </footer>
+
+  <!-- JS -->
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>
