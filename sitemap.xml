@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>https://tuusuario.github.io/qa-strategy/metricas/2026/08/25/mito-roi-automatizacion/</loc>
-<lastmod>2026-08-25T00:00:00+00:00</lastmod>
-</url>
-<url>
 <loc>https://tuusuario.github.io/qa-strategy/opinion/2026/08/26/calidad-como-gestion-riesgos/</loc>
 <lastmod>2026-08-26T00:00:00+00:00</lastmod>
 </url>
@@ -28,13 +24,13 @@
 <loc>https://tuusuario.github.io/old/2026-08-24-mito-roi-automatizacion/</loc>
 </url>
 <url>
+<loc>https://tuusuario.github.io/sobre-mi/</loc>
+</url>
+<url>
 <loc>https://tuusuario.github.io/articulos/</loc>
 </url>
 <url>
 <loc>https://tuusuario.github.io/categorias/</loc>
-</url>
-<url>
-<loc>https://tuusuario.github.io/sobre-mi/</loc>
 </url>
 <url>
 <loc>https://tuusuario.github.io/</loc>
