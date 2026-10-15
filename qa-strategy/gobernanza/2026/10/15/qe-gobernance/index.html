@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+    La gobernanza de Quality Engineering en entornos híbridos — Quality Breakthrough
+  </title>
+  <meta name="description" content="El dogma del Agile puro choca contra los sistemas legados y los contratos cerrados. La clave de Quality Engineering está en la gobernanza híbrida.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/assets/css/style.css">
+
+  <!-- SEO -->
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>La gobernanza de Quality Engineering en entornos híbridos | Quality Breakthrough</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="La gobernanza de Quality Engineering en entornos híbridos" />
+<meta name="author" content="Antonio Montero" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="El dogma del Agile puro choca contra los sistemas legados y los contratos cerrados. La clave de Quality Engineering está en la gobernanza híbrida." />
+<meta property="og:description" content="El dogma del Agile puro choca contra los sistemas legados y los contratos cerrados. La clave de Quality Engineering está en la gobernanza híbrida." />
+<link rel="canonical" href="https://tuusuario.github.io/qa-strategy/gobernanza/2026/10/15/qe-gobernance/" />
+<meta property="og:url" content="https://tuusuario.github.io/qa-strategy/gobernanza/2026/10/15/qe-gobernance/" />
+<meta property="og:site_name" content="Quality Breakthrough" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-10-15T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="La gobernanza de Quality Engineering en entornos híbridos" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Antonio Montero"},"dateModified":"2026-10-15T00:00:00+00:00","datePublished":"2026-10-15T00:00:00+00:00","description":"El dogma del Agile puro choca contra los sistemas legados y los contratos cerrados. La clave de Quality Engineering está en la gobernanza híbrida.","headline":"La gobernanza de Quality Engineering en entornos híbridos","mainEntityOfPage":{"@type":"WebPage","@id":"https://tuusuario.github.io/qa-strategy/gobernanza/2026/10/15/qe-gobernance/"},"url":"https://tuusuario.github.io/qa-strategy/gobernanza/2026/10/15/qe-gobernance/"}</script>
+<!-- End Jekyll SEO tag -->
+
+  
+  <!-- Google Analytics -->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RJVR0GV4HP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-RJVR0GV4HP');
+</script>
+
+
+</head>
+<body>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-close" onclick="toggleMenu()">✕</button>
+    <a href="/">Inicio</a>
+    <a href="/articulos/">Artículos</a>
+    <a href="/categorias/">Categorías</a>
+    <a href="/sobre-mi/">Sobre mí</a>
+  </div>
+
+  <!-- Nav -->
+  <nav class="site-nav">
+    <a href="/" class="nav-logo">
+      Quality <em>Breakthrough</em>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/">Inicio</a></li>
+      <li><a href="/articulos/">Artículos</a></li>
+      <li><a href="/categorias/">Categorías</a></li>
+      <li><a href="/sobre-mi/">Sobre mí</a></li>
+    </ul>
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Contenido principal -->
+  <main>
+    <article class="post-wrapper">
+
+  <header class="post-header fade-up">
+    
+      <a href="/categorias/qa-strategy" class="post-category-tag">
+        QA STRATEGY
+      </a>
+    
+
+    <h1 class="post-title" id="postTitle">La gobernanza de Quality Engineering en entornos híbridos</h1>
+
+    <!-- Títulos ocultos para el JS — solo si hay versión EN -->
+    
+      <span id="postTitleEs" style="display:none;">La gobernanza de Quality Engineering en entornos híbridos</span>
+      <span id="postTitleEn" style="display:none;">Quality Engineering Governance in Hybrid Environments</span>
+    
+
+    <div class="post-meta">
+      <span>15 Oct 2026</span>
+      
+        <span>⏱ 4 min de lectura</span>
+      
+      
+    </div>
+
+    <!-- Switch de idioma — solo aparece si el post tiene content_en -->
+    
+    <div class="post-lang-switch">
+      <span class="post-lang-label" id="langLabel">Versión en español</span>
+      <button class="lang-switch-btn" id="langSwitchBtn" onclick="togglePostLang()">
+        <span class="lang-switch-track">
+          <span class="lang-switch-thumb"></span>
+        </span>
+        <span class="lang-switch-text" id="langSwitchText">EN</span>
+      </button>
+    </div>
+    
+
+  </header>
+
+  <!-- Contenido ES — visible por defecto -->
+  <div class="post-content fade-up" id="postContentEs">
+    <p>El dogma de «Agile puro» funciona en la teoría, pero en la realidad corporativa la historia es otra.</p>
+
+<p>En canales digitales avanzamos en sprints de dos semanas con pruebas continuas, mientras los sistemas core legados y los proveedores externos con hitos cerrados operan en cascada. En medio queda Quality Engineering.</p>
+
+<p>Llevamos años oyendo que el modelo Waterfall ha muerto, pero en grandes organizaciones la prioridad no es evangelizar metodologías, sino gestionar la convivencia entre entornos.</p>
+
+<p>El reto de Quality Engineering no consiste en elegir un bando. Va de responder a preguntas clave de arquitectura y gobernanza:</p>
+
+<p>¿Cómo garantizar la cobertura de regresión cuando un frontal cambia cada semana y el backend se despliega cada seis meses?</p>
+
+<p>¿Cómo alinear la gestión de defectos entre equipos que estiman en puntos de historia y proveedores que trabajan sobre especificaciones cerradas?</p>
+
+<p>¿Cómo mantener la visibilidad del riesgo para negocio sin asfixiar a los equipos con burocracia?</p>
+
+<p>La solución no pasa por forzar a un sistema legado a actuar como una startup, ni por frenar el ritmo del canal digital. La respuesta es un modelo de gobernanza híbrida estructurado:</p>
+
+<p>Backlogs y tableros de defectos compartidos entre equipos ágiles y secuenciales.</p>
+
+<p>Estrategias de automatización focalizadas en las interfaces y capas de integración donde ambos mundos colisionan.</p>
+
+<p>Criterios de calidad (Quality Gates) adaptados a la naturaleza y al ritmo de cada activo tecnológico.</p>
+
+<p>Agilidad no es adoptar una etiqueta o un framework de moda. Es entregar valor al negocio con calidad, independientemente del modelo subyacente.</p>
+
+<p>¿Cómo gestionáis en vuestra organización esta convivencia entre equipos ágiles y proyectos en cascada? ¿Tenéis un modelo híbrido o habéis conseguido migrarlo todo a Agile?</p>
+
+<p>#QualityEngineering #Agile #Testing #SoftwareQuality #SoftwareTesting #DevOps</p>
+
+  </div>
+
+  <!-- Contenido EN — oculto por defecto -->
+  
+  <div class="post-content fade-up" id="postContentEn" style="display:none;">
+    <p>The “pure Agile” dogma sounds great in theory, but corporate reality is quite different.</p>
+
+<p>Digital channels move forward in two-week sprints with continuous testing, while core legacy systems and third-party vendors under fixed milestones operate in Waterfall. Quality Engineering sits right in the middle.</p>
+
+<p>We have been told for years that Waterfall is dead, but in large organizations, the priority is not evangelizing methodologies—it is managing co-existence across environments.</p>
+
+<p>The challenge for Quality Engineering is not choosing a side. It comes down to answering key architecture and governance questions:</p>
+
+<p>How do you ensure regression coverage when the frontend changes weekly while the backend deploys every six months?</p>
+
+<p>How do you align defect management between teams using story points and vendors working against fixed specifications?</p>
+
+<p>How do you maintain risk visibility for business stakeholders without suffocating teams in bureaucracy?</p>
+
+<p>The solution is neither forcing a legacy system to act like a startup nor slowing down digital delivery. The answer is a structured hybrid governance model:</p>
+
+<p>Shared backlogs and defect boards across agile and sequential teams.</p>
+
+<p>Automation strategies focused on interface and integration layers where both worlds intersect.</p>
+
+<p>Quality Gates tailored to the nature and delivery cadence of each tech asset.</p>
+
+<p>Agility is not about wearing a label or following a trending framework. It is about delivering business value with quality, regardless of the underlying methodology.</p>
+
+<p>How do you manage the co-existence of agile teams and waterfall projects in your organization? Do you run a hybrid model, or have you managed to transition everything to Agile?</p>
+
+<p>#QualityEngineering #Agile #Testing #SoftwareQuality #SoftwareTesting #DevOps</p>
+
+  </div>
+  
+
+  
+  <div class="post-linkedin-cta">
+    <p>💬 ¿Qué opinas? Continúa la conversación en LinkedIn</p>
+    <a href="https://www.linkedin.com/posts/antoniomontero-dorado_" target="_blank" rel="noopener" class="btn-primary">
+      Ver el debate →
+    </a>
+  </div>
+  
+
+  <!-- Footer: autor -->
+  <footer class="post-footer fade-up">
+    <div class="hero-avatar" style="width:56px;height:56px;font-size:1.3rem;">
+      AMD
+    </div>
+    <div>
+      <strong style="display:block;font-family:var(--serif);font-size:1rem;">
+        Antonio Montero
+      </strong>
+      <span style="font-size:.82rem;color:var(--muted);">Head of QA · Carrefour Spain</span>
+    </div>
+  </footer>
+
+  <!-- Artículos relacionados -->
+  
+  
+  
+  <section style="margin-top:64px;">
+    <div class="section-label" style="margin-bottom:24px;">✦ También te puede interesar</div>
+    <div class="articles-grid" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr));">
+      
+        
+
+
+<a href="/proveedores/qa-strategy/liderazgo/2026/10/07/gestionar-factorias-externas-qa/" class="article-card fade-up">
+  <div class="article-thumb thumb-proveedores">
+    <span>🌐</span>
+    <span class="article-cat">PROVEEDORES</span>
+  </div>
+  <div class="article-body">
+    <div class="article-meta">
+      7 Oct 2026
+       · PROVEEDORES
+    </div>
+    <h3 class="article-title">Cómo gestionar factorías externas y equipos híbridos sin arruinar la calidad del software</h3>
+    <p class="article-excerpt">El verdadero problema de las entregas en modelos híbridos no es la factoría externa, sino intentar gobernar proveedores con la ...</p>
+    <div class="article-footer">
+      <span class="read-time">⏱ 3 min</span>
+      <span class="read-link">Leer →</span>
+    </div>
+  </div>
+</a>
+
+      
+        
+
+
+<a href="/qa-strategy/liderazgo/automatizacion/2026/09/19/roi-automatization/" class="article-card fade-up">
+  <div class="article-thumb thumb-qa-strategy">
+    <span>📊</span>
+    <span class="article-cat">QA STRATEGY</span>
+  </div>
+  <div class="article-body">
+    <div class="article-meta">
+      19 Sep 2026
+       · QA STRATEGY
+    </div>
+    <h3 class="article-title">La Radiografía del ROI en Automatización de Pruebas: Perspectiva de un QA Manager</h3>
+    <p class="article-excerpt">Como QA Manager, la automatización es una decisión de ingeniería y gestión de riesgos. Descubre cómo calcular el ROI real, qué ...</p>
+    <div class="article-footer">
+      <span class="read-time">⏱ 5 min</span>
+      <span class="read-link">Leer →</span>
+    </div>
+  </div>
+</a>
+
+      
+        
+
+
+<a href="/qa-strategy/opinion/2026/08/26/calidad-como-gestion-riesgos/" class="article-card fade-up">
+  <div class="article-thumb thumb-qa-strategy">
+    <span>⚠️</span>
+    <span class="article-cat">QA STRATEGY</span>
+  </div>
+  <div class="article-body">
+    <div class="article-meta">
+      26 Aug 2026
+       · QA STRATEGY
+    </div>
+    <h3 class="article-title">La calidad no es eliminar riesgos, es decidir cuáles vas a comprar</h3>
+    <p class="article-excerpt">Una estrategia de calidad madura no intenta erradicar todos los errores, sino gestionar y aceptar riesgos de manera consciente ...</p>
+    <div class="article-footer">
+      <span class="read-time">⏱ 4 min</span>
+      <span class="read-link">Leer →</span>
+    </div>
+  </div>
+</a>
+
+      
+    </div>
+  </section>
+  
+
+</article>
+
+<style>
+/* ── Linkedin ───────────────────────── */
+.post-linkedin-cta {
+  margin-top: 48px;
+  padding: 28px 32px;
+  background: var(--surface);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.post-linkedin-cta p {
+  font-family: var(--mono);
+  font-size: .85rem;
+  color: var(--muted);
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+  .post-linkedin-cta { flex-direction: column; text-align: center; }
+}
+/* ── Switch de idioma ───────────────────────── */
+.post-lang-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+  padding: 10px 16px;
+  background: var(--surface);
+  border-radius: 30px;
+  user-select: none;
+}
+
+.post-lang-label {
+  font-family: var(--mono);
+  font-size: .72rem;
+  color: var(--muted);
+  letter-spacing: .06em;
+  min-width: 140px;
+}
+
+.lang-switch-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.lang-switch-track {
+  width: 40px;
+  height: 22px;
+  background: var(--surface);
+  border: 2px solid var(--muted);
+  border-radius: 11px;
+  position: relative;
+  display: block;
+  transition: background .25s, border-color .25s;
+}
+
+.lang-switch-thumb {
+  width: 14px;
+  height: 14px;
+  background: var(--muted);
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: transform .25s, background .25s;
+  display: block;
+}
+
+/* Estado activo (EN) */
+.lang-switch-btn.active .lang-switch-track {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+.lang-switch-btn.active .lang-switch-thumb {
+  transform: translateX(18px);
+  background: white;
+}
+
+.lang-switch-text {
+  font-family: var(--mono);
+  font-size: .75rem;
+  font-weight: 500;
+  color: var(--muted);
+  letter-spacing: .08em;
+  transition: color .2s;
+  width: 18px;
+}
+.lang-switch-btn.active .lang-switch-text {
+  color: var(--accent);
+}
+
+/* Transición suave del contenido */
+.post-content {
+  animation: contentFade .3s ease;
+}
+@keyframes contentFade {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+</style>
+
+<script>
+(function () {
+  var isEN = false;
+
+  window.togglePostLang = function () {
+    isEN = !isEN;
+
+    var esBlock = document.getElementById('postContentEs');
+    var enBlock = document.getElementById('postContentEn');
+    var btn     = document.getElementById('langSwitchBtn');
+    var label   = document.getElementById('langLabel');
+    var btnText = document.getElementById('langSwitchText');
+    var title   = document.getElementById('postTitle');
+    var titleEs = document.getElementById('postTitleEs');
+    var titleEn = document.getElementById('postTitleEn');
+
+    if (isEN) {
+      esBlock.style.display = 'none';
+      enBlock.style.display = 'block';
+      enBlock.style.animation = 'none';
+      enBlock.offsetHeight;
+      enBlock.style.animation = '';
+      btn.classList.add('active');
+      label.textContent = 'English version';
+      btnText.textContent = 'ES';
+      if (title && titleEn) title.textContent = titleEn.textContent;
+    } else {
+      enBlock.style.display = 'none';
+      esBlock.style.display = 'block';
+      esBlock.style.animation = 'none';
+      esBlock.offsetHeight;
+      esBlock.style.animation = '';
+      btn.classList.remove('active');
+      label.textContent = 'Versión en español';
+      btnText.textContent = 'EN';
+      if (title && titleEs) title.textContent = titleEs.textContent;
+    }
+  };
+})();
+</script>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>
+      © 2026 Quality Breakthrough ·
+      Escrito desde Madrid con ☕ ·
+      <a href="https://linkedin.com/in/antoniomontero-dorado" target="_blank" rel="noopener">LinkedIn</a> ·
+      <a href="/feed.xml">RSS</a>
+    </p>
+  </footer>
+
+  <!-- JS -->
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>
