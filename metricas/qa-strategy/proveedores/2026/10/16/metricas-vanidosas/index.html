@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+    Métricas vanidosas en Quality Engineering: el peligro del reporting de escaparate — Quality Breakthrough
+  </title>
+  <meta name="description" content="Ejecutar miles de pruebas y teñir un cuadro de mando de verde no reduce el riesgo del negocio. Analizamos cómo pasar del reporting vanidoso a métricas útiles...">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/assets/css/style.css">
+
+  <!-- SEO -->
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Métricas vanidosas en Quality Engineering: el peligro del reporting de escaparate | Quality Breakthrough</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Métricas vanidosas en Quality Engineering: el peligro del reporting de escaparate" />
+<meta name="author" content="Antonio Montero" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Ejecutar miles de pruebas y teñir un cuadro de mando de verde no reduce el riesgo del negocio. Analizamos cómo pasar del reporting vanidoso a métricas útiles basadas en GQM." />
+<meta property="og:description" content="Ejecutar miles de pruebas y teñir un cuadro de mando de verde no reduce el riesgo del negocio. Analizamos cómo pasar del reporting vanidoso a métricas útiles basadas en GQM." />
+<link rel="canonical" href="https://tuusuario.github.io/metricas/qa-strategy/proveedores/2026/10/16/metricas-vanidosas/" />
+<meta property="og:url" content="https://tuusuario.github.io/metricas/qa-strategy/proveedores/2026/10/16/metricas-vanidosas/" />
+<meta property="og:site_name" content="Quality Breakthrough" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-10-16T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Métricas vanidosas en Quality Engineering: el peligro del reporting de escaparate" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Antonio Montero"},"dateModified":"2026-10-16T00:00:00+00:00","datePublished":"2026-10-16T00:00:00+00:00","description":"Ejecutar miles de pruebas y teñir un cuadro de mando de verde no reduce el riesgo del negocio. Analizamos cómo pasar del reporting vanidoso a métricas útiles basadas en GQM.","headline":"Métricas vanidosas en Quality Engineering: el peligro del reporting de escaparate","mainEntityOfPage":{"@type":"WebPage","@id":"https://tuusuario.github.io/metricas/qa-strategy/proveedores/2026/10/16/metricas-vanidosas/"},"url":"https://tuusuario.github.io/metricas/qa-strategy/proveedores/2026/10/16/metricas-vanidosas/"}</script>
+<!-- End Jekyll SEO tag -->
+
+  
+  <!-- Google Analytics -->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RJVR0GV4HP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-RJVR0GV4HP');
+</script>
+
+
+</head>
+<body>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-close" onclick="toggleMenu()">✕</button>
+    <a href="/">Inicio</a>
+    <a href="/articulos/">Artículos</a>
+    <a href="/categorias/">Categorías</a>
+    <a href="/sobre-mi/">Sobre mí</a>
+  </div>
+
+  <!-- Nav -->
+  <nav class="site-nav">
+    <a href="/" class="nav-logo">
+      Quality <em>Breakthrough</em>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/">Inicio</a></li>
+      <li><a href="/articulos/">Artículos</a></li>
+      <li><a href="/categorias/">Categorías</a></li>
+      <li><a href="/sobre-mi/">Sobre mí</a></li>
+    </ul>
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Contenido principal -->
+  <main>
+    <article class="post-wrapper">
+
+  <header class="post-header fade-up">
+    
+      <a href="/categorias/metricas" class="post-category-tag">
+        METRICAS
+      </a>
+    
+
+    <h1 class="post-title" id="postTitle">Métricas vanidosas en Quality Engineering: el peligro del reporting de escaparate</h1>
+
+    <!-- Títulos ocultos para el JS — solo si hay versión EN -->
+    
+      <span id="postTitleEs" style="display:none;">Métricas vanidosas en Quality Engineering: el peligro del reporting de escaparate</span>
+      <span id="postTitleEn" style="display:none;">Vanity Metrics in Quality Engineering: The Danger of Window-Dressing Reporting</span>
+    
+
+    <div class="post-meta">
+      <span>16 Oct 2026</span>
+      
+        <span>⏱ 4 min de lectura</span>
+      
+      
+    </div>
+
+    <!-- Switch de idioma — solo aparece si el post tiene content_en -->
+    
+    <div class="post-lang-switch">
+      <span class="post-lang-label" id="langLabel">Versión en español</span>
+      <button class="lang-switch-btn" id="langSwitchBtn" onclick="togglePostLang()">
+        <span class="lang-switch-track">
+          <span class="lang-switch-thumb"></span>
+        </span>
+        <span class="lang-switch-text" id="langSwitchText">EN</span>
+      </button>
+    </div>
+    
+
+  </header>
+
+  <!-- Contenido ES — visible por defecto -->
+  <div class="post-content fade-up" id="postContentEs">
+    <p>Ejecutar 5.000 casos de prueba y tener el dashboard teñido de verde no significa que tu software esté listo para producción.
+Significa, únicamente, que sabes medir el volumen, no el riesgo.</p>
+
+<p>En la gestión de Quality Engineering, especialmente cuando coordinamos proveedores y factorías de pruebas externas, es alarmantemente fácil caer en la trampa del “reporting de escaparate”.</p>
+
+<p>Nos inundan con métricas vanidosas: número de casos ejecutados, porcentaje bruto de automatización o total de horas imputadas. Son datos reconfortantes en lo visual, pero operativamente huecos. Si un cuadro de mando no ayuda a tomar una decisión crítica sobre el despliegue, solo genera ruido decorativo.</p>
+
+<p>Para pasar de la medición vanidosa a la medición útil es necesario invertir la ecuación mediante el enfoque Goal-Question-Metric (GQM):</p>
+
+<p>Goal (Meta de Negocio): En lugar de medir la cantidad bruta de pruebas realizadas, definimos qué riesgo prioritario queremos mitigar, como garantizar la estabilidad del checkout durante un pico de ventas.</p>
+
+<p>Question (Pregunta Clave): Determinamos qué información concreta necesita el liderazgo para tomar la decisión. Por ejemplo, la tendencia de descubrimiento de fallos críticos en el proceso de pago a medida que se acerca la fecha límite.</p>
+
+<p>Metric (Métrica Útil): Seleccionamos el indicador que responde a la pregunta, como la curva acumulada de hallazgos críticos frente al porcentaje de detección de defectos (DDP).</p>
+
+<p>Las métricas útiles responden preguntas difíciles; las métricas vanidosas solo justifican presupuestos.</p>
+
+<p>Si lideras calidad o gobiernas entregables de terceros, la pregunta clave no es cuánto has probado hoy, sino qué incertidumbre has reducido para el negocio.</p>
+
+<p>¿Cuál es esa métrica de escaparate que sigues viendo en los cuadros de mando de tu organización aunque no aporte valor real?</p>
+
+<p>#QualityEngineering #SoftwareTesting #GQM #Metrics #TestingGovernance #SoftwareQuality</p>
+
+  </div>
+  
+    
+  
+  
+
+  <!-- Contenido EN — oculto por defecto -->
+  
+  <div class="post-content fade-up" id="postContentEn" style="display:none;">
+    <p>Running 5,000 test cases and having a green dashboard does not mean your software is ready for production.
+It simply means you know how to measure volume, not risk.</p>
+
+<p>In Quality Engineering management, especially when coordinating suppliers and external test factories, it is alarmingly easy to fall into the trap of “window-dressing reporting.”</p>
+
+<p>We are flooded with vanity metrics: number of executed test cases, gross automation percentage, or total logged hours. They are visually comforting but operationally hollow. If a dashboard does not help make a critical release decision, it only generates decorative noise.</p>
+
+<p>To shift from vanity metrics to useful measurement, we need to invert the equation using the Goal-Question-Metric (GQM) approach:</p>
+
+<p>Goal (Business Goal): Instead of measuring raw test output, we define which critical risk we want to mitigate, such as ensuring checkout stability during a peak sales period.</p>
+
+<p>Question (Key Question): We determine what specific information leadership needs to make a decision. For instance, the discovery trend of critical defects in the checkout flow as the deadline approaches.</p>
+
+<p>Metric (Useful Metric): We select the indicator that answers the question, such as the cumulative curve of critical findings versus the Defect Detection Percentage (DDP).</p>
+
+<p>Useful metrics answer tough questions; vanity metrics only justify budgets.</p>
+
+<p>If you lead quality or govern third-party deliverables, the key question is not how much you tested today, but what uncertainty you reduced for the business.</p>
+
+<p>What is that window-dressing metric you keep seeing on your organization’s dashboards even though it adds no real value?</p>
+
+<p>#QualityEngineering #SoftwareTesting #GQM #Metrics #TestingGovernance #SoftwareQuality</p>
+
+  </div>
+  
+
+  
+  <div class="post-linkedin-cta">
+    <p>💬 ¿Qué opinas? Continúa la conversación en LinkedIn</p>
+    <a href="https://www.linkedin.com/posts/antoniomontero-dorado_" target="_blank" rel="noopener" class="btn-primary">
+      Ver el debate →
+    </a>
+  </div>
+  
+
+  <!-- Footer: autor -->
+  <footer class="post-footer fade-up">
+    <div class="hero-avatar" style="width:56px;height:56px;font-size:1.3rem;">
+      AMD
+    </div>
+    <div>
+      <strong style="display:block;font-family:var(--serif);font-size:1rem;">
+        Antonio Montero
+      </strong>
+      <span style="font-size:.82rem;color:var(--muted);">Head of QA · Carrefour Spain</span>
+    </div>
+  </footer>
+
+  <!-- Artículos relacionados -->
+  
+  
+  
+
+</article>
+
+<style>
+/* ── Linkedin ───────────────────────── */
+.post-linkedin-cta {
+  margin-top: 48px;
+  padding: 28px 32px;
+  background: var(--surface);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.post-linkedin-cta p {
+  font-family: var(--mono);
+  font-size: .85rem;
+  color: var(--muted);
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+  .post-linkedin-cta { flex-direction: column; text-align: center; }
+}
+/* ── Switch de idioma ───────────────────────── */
+.post-lang-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+  padding: 10px 16px;
+  background: var(--surface);
+  border-radius: 30px;
+  user-select: none;
+}
+
+.post-lang-label {
+  font-family: var(--mono);
+  font-size: .72rem;
+  color: var(--muted);
+  letter-spacing: .06em;
+  min-width: 140px;
+}
+
+.lang-switch-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.lang-switch-track {
+  width: 40px;
+  height: 22px;
+  background: var(--surface);
+  border: 2px solid var(--muted);
+  border-radius: 11px;
+  position: relative;
+  display: block;
+  transition: background .25s, border-color .25s;
+}
+
+.lang-switch-thumb {
+  width: 14px;
+  height: 14px;
+  background: var(--muted);
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: transform .25s, background .25s;
+  display: block;
+}
+
+/* Estado activo (EN) */
+.lang-switch-btn.active .lang-switch-track {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+.lang-switch-btn.active .lang-switch-thumb {
+  transform: translateX(18px);
+  background: white;
+}
+
+.lang-switch-text {
+  font-family: var(--mono);
+  font-size: .75rem;
+  font-weight: 500;
+  color: var(--muted);
+  letter-spacing: .08em;
+  transition: color .2s;
+  width: 18px;
+}
+.lang-switch-btn.active .lang-switch-text {
+  color: var(--accent);
+}
+
+/* Transición suave del contenido */
+.post-content {
+  animation: contentFade .3s ease;
+}
+@keyframes contentFade {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+</style>
+
+<script>
+(function () {
+  var isEN = false;
+
+  window.togglePostLang = function () {
+    isEN = !isEN;
+
+    var esBlock = document.getElementById('postContentEs');
+    var enBlock = document.getElementById('postContentEn');
+    var btn     = document.getElementById('langSwitchBtn');
+    var label   = document.getElementById('langLabel');
+    var btnText = document.getElementById('langSwitchText');
+    var title   = document.getElementById('postTitle');
+    var titleEs = document.getElementById('postTitleEs');
+    var titleEn = document.getElementById('postTitleEn');
+
+    if (isEN) {
+      esBlock.style.display = 'none';
+      enBlock.style.display = 'block';
+      enBlock.style.animation = 'none';
+      enBlock.offsetHeight;
+      enBlock.style.animation = '';
+      btn.classList.add('active');
+      label.textContent = 'English version';
+      btnText.textContent = 'ES';
+      if (title && titleEn) title.textContent = titleEn.textContent;
+    } else {
+      enBlock.style.display = 'none';
+      esBlock.style.display = 'block';
+      esBlock.style.animation = 'none';
+      esBlock.offsetHeight;
+      esBlock.style.animation = '';
+      btn.classList.remove('active');
+      label.textContent = 'Versión en español';
+      btnText.textContent = 'EN';
+      if (title && titleEs) title.textContent = titleEs.textContent;
+    }
+  };
+})();
+</script>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>
+      © 2026 Quality Breakthrough ·
+      Escrito desde Madrid con ☕ ·
+      <a href="https://linkedin.com/in/antoniomontero-dorado" target="_blank" rel="noopener">LinkedIn</a> ·
+      <a href="/feed.xml">RSS</a>
+    </p>
+  </footer>
+
+  <!-- JS -->
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>
