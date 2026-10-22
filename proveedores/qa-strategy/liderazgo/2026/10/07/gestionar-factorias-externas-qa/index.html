@@ -401,6 +401,8 @@ Claiming that “quality is everyone’s responsibility” when third-party cons
     var title   = document.getElementById('postTitle');
     var titleEs = document.getElementById('postTitleEs');
     var titleEn = document.getElementById('postTitleEn');
+    var imageEs = document.getElementById('postImageEs');
+    var imageEn = document.getElementById('postImageEn');
 
     if (isEN) {
       esBlock.style.display = 'none';
@@ -411,6 +413,8 @@ Claiming that “quality is everyone’s responsibility” when third-party cons
       btn.classList.add('active');
       label.textContent = 'English version';
       btnText.textContent = 'ES';
+      if (imageEs) imageEs.style.display = 'none';
+      if (imageEn) imageEn.style.display = 'block';
       if (title && titleEn) title.textContent = titleEn.textContent;
     } else {
       enBlock.style.display = 'none';
@@ -421,6 +425,8 @@ Claiming that “quality is everyone’s responsibility” when third-party cons
       btn.classList.remove('active');
       label.textContent = 'Versión en español';
       btnText.textContent = 'EN';
+      if (imageEs) imageEs.style.display = 'block';
+      if (imageEn) imageEn.style.display = 'none';
       if (title && titleEs) title.textContent = titleEs.textContent;
     }
   };
